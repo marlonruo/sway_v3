@@ -973,15 +973,15 @@ click en "Permitir" para continuar.
         <div class="t1" style="width:100%; text-align:center; top:14%">Mi cuenta</div>
             
         <div id="lo_1" class="campos" style="left:8%; width:84%; height:8%; top:20%;background:url(imagenes/edi.png) no-repeat; background-size:auto 60%; background-position:94%">
-          <p class="crear" style="left:5%">Nombre: Alessa Auditore</p>
+          <p id="lo_1b" class="crear" style="left:5%">Nombre: Alessa Auditore</p>
         </div>
         
         <div id="lo_2" class="campos" style="left:8%; width:84%; height:8%; top:31%;">
-          <p class="crear" style="left:5%">Email: alessa@auditore.com</p>
+          <p id="lo_2b" class="crear" style="left:5%">Email: alessa@auditore.com</p>
         </div>
         
         <div id="lo_3" class="campos" style="left:8%; width:84%; height:8%; top:42%;">
-          <p class="crear" style="left:5%">Tel: 55-6789-9876</p>
+          <p id="lo_3b" class="crear" style="left:5%">Tel: 55-6789-9876</p>
         </div>
         
         <div id="lo_4" class="campos" style="left:8%; width:84%; height:8%; top:53%;">
@@ -1031,16 +1031,16 @@ click en "Permitir" para continuar.
       <div id="editar" style="display:none">
             <div class="t1" style="width:100%; text-align:center; top:14%">Editar Perfil:</div>
                 
-            <div id="lo_1" class="campos" style="left:8%; width:84%; height:8%; top:20%;">
-              <p class="crear" style="left:5%">Alessa Auditore</p>
+            <div class="campos" style="left:8%; width:84%; height:8%; top:20%;">
+              <p id="lo_1a" class="crear" style="left:5%">Alessa Auditore</p>
             </div>
             
-            <div id="lo_2" class="campos" style="left:8%; width:84%; height:8%; top:31%;">
-              <p class="crear" style="left:5%">alessa@auditore.com</p>
+            <div class="campos" style="left:8%; width:84%; height:8%; top:31%;">
+              <p id="lo_2a" class="crear" style="left:5%">alessa@auditore.com</p>
             </div>
             
-            <div id="lo_3" class="campos" style="left:8%; width:84%; height:8%; top:42%;">
-              <p class="crear" style="left:5%">55-6789-9876</p>
+            <div class="campos" style="left:8%; width:84%; height:8%; top:42%;">
+              <p id="lo_3a" class="crear" style="left:5%">55-6789-9876</p>
             </div>
             
             <div id="c_edad2" class="campos" style="left:8%; width:40%; height:8%; top:53%; background:url(imagenes/abajo.png) no-repeat; background-size:auto 38%; background-position:90%">
@@ -1303,6 +1303,20 @@ click en "Permitir" para continuar.
 		var edad = document.getElementById('t_edad').innerHTML
 		var genero = document.getElementById('t_genero').innerHTML
 		var contrasena = $("input#c_contrasena").val();
+		
+		
+		$('#lo_1b').html('Nombre: '+nombre)
+		$('#lo_2b').html('Email: '+email)
+		$('#lo_3b').html('Tel: 0000 0000')
+		
+		
+		$('#lo_1a').html(nombre)
+		$('#lo_2a').html(email)
+		$('#lo_3a').html('0000 0000')
+		$('#t_edad2').html(edad)
+		$('#t_genero2').html(genero)
+
+		
 		
 		var filtro = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;	
 		
@@ -1663,6 +1677,7 @@ click en "Permitir" para continuar.
 		 $('#opciones').animate({marginLeft:'0%'}, 500, 'linear')
 		 $('#todo').animate({marginLeft:'-100%'}, 500, 'linear')
 		 $('#titulo_seccion').html('Menu')
+		 $('#editar').delay(800).fadeOut()
       })
 	  
 	  $('#cerrar_menu').click(function(){
