@@ -291,12 +291,14 @@ function getCurrentUserInfo() {
         
         <script>
         	$('#c_genero').mousedown(function(){
+				$('#ale').fadeOut()
 				$('#c_genero').css('background-color','#C7004B')
 				$('#c_edad').css('background-color','rgba(255,255,255,0)')
 				$('#op_genero').show()
 				$('#op_edad').hide()
 			})
 			$('#c_edad').mousedown(function(){
+				$('#ale').fadeOut()
 				$('#c_edad').css('background-color','#C7004B')
 				$('#c_genero').css('background-color','rgba(255,255,255,0)')
 				$('#op_edad').show()
@@ -304,6 +306,7 @@ function getCurrentUserInfo() {
 			})
 			
 			function borrar1_bac(){
+				$('#ale').fadeOut()
 				$('#c_edad').css('background-color','rgba(255,255,255,0)')
 				$('#c_genero').css('background-color','rgba(255,255,255,0)')
 				$('#op_edad').hide()
@@ -339,6 +342,7 @@ function getCurrentUserInfo() {
         <script>
 			var tte=0
 			$('#terminos').click(function(){
+				$('#ale').fadeOut()
 				if(tte==0){
 				$('#terminos').css('background','url(imagenes/palomita.png) no-repeat');
 				$('#terminos').css('background-size', 'auto 60%');
@@ -356,6 +360,7 @@ function getCurrentUserInfo() {
 				$('#c_genero').css('background-color','rgba(255,255,255,0)')
 				$('#op_edad').hide()
 				$('#op_genero').hide()
+				$('#ale').fadeOut()
 			}
 			function revisar1(){
 				if(document.getElementById('c_nombre').value==""){
@@ -369,6 +374,7 @@ function getCurrentUserInfo() {
 				$('#c_genero').css('background-color','rgba(255,255,255,0)')
 				$('#op_edad').hide()
 				$('#op_genero').hide()
+				$('#ale').fadeOut()
 			}
 			function revisar2(){
 				if(document.getElementById('c_email').value==""){
@@ -382,6 +388,7 @@ function getCurrentUserInfo() {
 				$('#c_genero').css('background-color','rgba(255,255,255,0)')
 				$('#op_edad').hide()
 				$('#op_genero').hide()
+				$('#ale').fadeOut()
 			}
 			function revisar5(){
 				if(document.getElementById('c_contrasena').value==""){
@@ -395,6 +402,7 @@ function getCurrentUserInfo() {
 				$('#c_genero').css('background-color','rgba(255,255,255,0)')
 				$('#op_edad').hide()
 				$('#op_genero').hide()
+				$('#ale').fadeOut()
 			}
 			function revisar6(){
 				if(document.getElementById('c_codigo').value==""){
@@ -1216,9 +1224,9 @@ click en "Permitir" para continuar.
             
             <div id="alerta2" style="position:absolute; height:60%; right:28%; top:20%; display:none"><b>2</b></div>
            
-           <div id="bloquea" style="position:absolute; width:100%; height:1200%; background-color:rgba(0,0,0,.5); display:none"></div> 
+           <div id="bloquea" style="position:absolute; width:100%; height:1200%; display:none"></div> 
             
-            <div id="ales" style="position:absolute; width:50%; height:auto; right:14%; top:101%; font-family:Arial; color:#000; display:none; z-index:10">
+            <div id="ales" style="position:absolute; width:50%; height:auto; right:14%; top:100%; font-family:Arial; color:#000; display:none; z-index:10; background-color:rgba(255,255,255,1.00)">
                 <div class="alertas" style="width:90%; height:40px; padding-right:10%; text-align:right; border-bottom:1px dashed rgba(150,150,150,.5); padding-top:4px; padding-bottom:4px">El cargo se Realizo</div>
                 <div class="alertas" style="width:90%; height:40px; padding-right:10%; text-align:right; padding-top:4px; padding-bottom:4px">Nuevas promociones</div>
                 
@@ -1729,6 +1737,7 @@ click en "Permitir" para continuar.
 	  
 	  
 	  $('#bt_votacion').click(function(){
+
 		  
 		 $('#votacion').css('z-index', '1')
 		 $('#galeria').css('z-index', '0')
