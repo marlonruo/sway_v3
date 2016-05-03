@@ -1,0 +1,1980 @@
+<!DOCTYPE html>
+
+<!--
+
+    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+
+-->
+
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="msapplication-tap-highlight" content="no" />
+
+<!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+<!--<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />-->
+
+<meta name="viewport" content="user-scalable=no, target-densitydpi=device-dpi">
+<link rel="stylesheet" type="text/css" href="css/index.css" />
+<title>Opinion</title>
+<link href="css/estilos.css" rel="stylesheet" type="text/css">
+
+<script src="js/jquery-1.11.2.js" type="text/javascript"></script>
+<script src="js/jquery.mobile.custom.js" type="text/javascript"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/ui.touch.punch.js"></script>
+<script src="js/move.js"></script>
+<script src="js/jquery.event.swipe.js"></script>
+<script src="js/transit.js"></script>
+<script src="js/easing.js"></script>
+
+
+
+<script>
+var lati
+var long
+/*$(document).ready(function(){
+	$("#ciudades").html("no");
+        $.get("http://pixelweather.com/leer.php", {}, function(data) {
+        $("#ciudades").html(data);
+    })
+	//localStorage.setItem("grados", '')
+	$('#contenedor').hide()
+	inicio()
+	setTimeout('saltar()', 1100)
+    //e.preventDefault();         
+});*/
+</script>
+
+
+</head>
+
+<body onLoad="inicio()">
+
+<script>
+  // This is called with the results from from FB.getLoginStatus().
+/*  function statusChangeCallback(response) {
+    console.log('statusChangeCallback');
+    console.log(response);
+    if (response.status === 'connected') {
+      // Logged into your app and Facebook.
+      testAPI();
+    } else if (response.status === 'not_authorized') {
+      // The person is logged into Facebook, but not your app.
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into this app.';
+    } else {
+      document.getElementById('status').innerHTML = 'Please log ' +
+      'into Facebook.';
+    }
+  }
+
+  function checkLoginState() {
+      FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
+
+  window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '225937201075420',
+    cookie     : true,  // enable cookies to allow the server to access 
+                        // the session
+    xfbml      : true,  // parse social plugins on this page
+    version    : 'v2.2' // use version 2.2
+  });
+
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+  };
+
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+  
+  function testAPI() {
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', { locale: 'en_US', fields: 'name, email'}, function(response) {
+      console.log('Successful login for: ' + response.email);
+      document.getElementById('status').innerHTML =
+        'Thanks for logging in, ' + response.name + ' '+response.email;
+    });
+  }  
+
+function myFacebookLogin() {
+FB.login(function(response) {
+    if (response.authResponse) {
+		getCurrentUserInfo(response)
+     	//console.log('Welcome!  Fetching your information.... ');
+	 	//document.getElementById('status').innerHTML = 'Good to see you, ' + response.name
+     	FB.api('/me', function(response) {
+        getCurrentUserInfo(response)
+		//console.log('Good to see you, ' + response.last_name + '.');
+	   //document.getElementById('status').innerHTML =  'Good to see you2, ' + response.name
+     });
+    } else {
+     console.log('User cancelled login or did not fully authorize.');
+	 document.getElementById('status').innerHTML =  'cancelld'
+    }
+});
+}
+function Login() {
+  FB.login(function(){}, {scope: 'public_profile,email'});
+}
+
+function myFacebookLogout() {
+FB.logout(function(response) {});
+}
+
+function myFacebookPublica(){
+FB.login(function(){
+  // Note: The call will only work if you accept the permission request
+  FB.api('/me/feed', 'post', {message: 'Hello, world!'});
+}, {scope: 'publish_actions'});
+}
+
+
+function getCurrentUserInfo() {
+	  FB.api('/me', { locale: 'en_US', fields: 'name, email' },
+		  function(response) {
+			document.getElementById('status').innerHTML = response.email;
+		  }
+		);
+       FB.api('/me', function(userInfo) {
+       document.getElementById('status').innerHTML =userInfo.name + ': ' + userInfo.email
+      });
+}
+*/
+
+
+
+
+  /*$(function() {
+    FB.init({
+      appId  : 'APP_ID',
+      status : true, // check login status
+      cookie : true, // enable cookies to allow the server to access the session
+      xfbml  : true  // parse XFBML
+    });
+
+    FB.getLoginStatus(function(response) {
+      if (response.status == 'connected') {
+        getCurrentUserInfo(response)
+      } else {
+        FB.login(function(response) {
+          if (response.authResponse){
+            getCurrentUserInfo(response)
+          } else {
+            console.log('Auth cancelled.')
+          }
+        }, { scope: 'email' });
+      }
+    });
+
+    function getCurrentUserInfo() {
+      FB.api('/me', function(userInfo) {
+        console.log(userInfo.name + ': ' + userInfo.email);
+      });
+    }
+  });*/
+
+</script>
+
+
+<!--<button onclick="myFacebookLogin()">Login with Facebook</button>
+<button onclick="myFacebookLogout()">Logout</button>
+<button onclick="myFacebookPublica()">Publica</button>-->
+
+
+    <div id="contenedor" style="overflow:hidden">
+    
+    
+    
+     <div id="todo">
+     
+     
+    
+   	  <div id="login" style="display:block;">
+      	<div style="position:absolute; width:100%; height:155%">
+       	<div class="t1" style="width:90%; left:5%; text-align:center; top:10%">Crear una cuenta para comenzar:</div>
+            
+        <div class="campos" style="left:8%; width:84%; height:5%; top:14%">
+        	<p id="t_nombre" class="crear" style="margin-left:5%">Nombre:</p>
+            <input id="c_nombre" name="c_nombre" class="campo_texto" type="text" onFocus="borrar1()" onBlur="revisar1()">
+        </div>
+        <div class="campos" style="left:8%; width:84%; height:5%; top:21.5%">
+        	<p id="t_email" class="crear" style="margin-left:5%">Email:</p>
+            <input id="c_email" name="c_email" class="campo_texto" type="text" onFocus="borrar2()" onBlur="revisar2()">
+        </div>
+        
+        <div id="c_edad" class="campos" style="left:8%; width:40%; height:5%; top:29%; background:url(imagenes/abajo.png) no-repeat; background-size:auto 38%; background-position:90%">
+        	<p id="t_edad" class="crear" style="margin-left:5%">Edad</p>
+            
+            	<div id="op_edad" style="position:absolute; background-color:#fff; width:100%; height:240%; top:100%; z-index:1000; overflow:scroll; overflow-x:hidden; display:none">
+       	    		<div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left;" onClick="$('#t_edad').html('18'); borrar1_bac()"><p>18</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('19'); borrar1_bac()"><p>19</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('20'); borrar1_bac()"><p>20</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('21'); borrar1_bac()"><p>21</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('22'); borrar1_bac()"><p>22</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('23'); borrar1_bac()"><p>23</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('24'); borrar1_bac()"><p>24</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('25'); borrar1_bac()"><p>25</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('26'); borrar1_bac()"><p>26</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('27'); borrar1_bac()"><p>27</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('28'); borrar1_bac()"><p>28</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('29'); borrar1_bac()"><p>29</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('30'); borrar1_bac()"><p>30</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('31'); borrar1_bac()"><p>31</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('32'); borrar1_bac()"><p>32</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('33'); borrar1_bac()"><p>33</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('34'); borrar1_bac()"><p>34</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('35'); borrar1_bac()"><p>35</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('36'); borrar1_bac()"><p>36</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('37'); borrar1_bac()"><p>37</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('38'); borrar1_bac()"><p>38</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('39'); borrar1_bac()"><p>39</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('40'); borrar1_bac()"><p>40</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('41'); borrar1_bac()"><p>41</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('42'); borrar1_bac()"><p>42</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('43'); borrar1_bac()"><p>43</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('44'); borrar1_bac()"><p>44</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('45'); borrar1_bac()"><p>45</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('46'); borrar1_bac()"><p>46</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('47'); borrar1_bac()"><p>47</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('48'); borrar1_bac()"><p>48</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('49'); borrar1_bac()"><p>49</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('50'); borrar1_bac()"><p>50</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('51'); borrar1_bac()"><p>51</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('52'); borrar1_bac()"><p>52</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('53'); borrar1_bac()"><p>53</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('54'); borrar1_bac()"><p>54</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('55'); borrar1_bac()"><p>55</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('56'); borrar1_bac()"><p>56</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('57'); borrar1_bac()"><p>57</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('58'); borrar1_bac()"><p>58</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('59'); borrar1_bac()"><p>59</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('60'); borrar1_bac()"><p>60</p></div>
+                </div>
+        </div>
+        
+        <div id="c_genero" class="campos" style="left:52%; width:40%; height:5%; top:29%; background:url(imagenes/abajo.png) no-repeat; background-size:auto 38%; background-position:90%">
+        	<p id="t_genero" class="crear" style="margin-left:5%">Género</p>
+            
+                 <div id="op_genero" style="position:absolute; background-color:#fff; width:100%; height:120%; top:100%; z-index:1000; display:none">
+       	    		<div class="t3" style="height:50%; width:85%; left:5%; color:#C7004B; position:relative; float:left;" onClick="$('#t_genero').html('Hombre'); borrar1_bac()"><p>Hombre</p></div>
+                    <div class="t3" style="height:50%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_genero').html('Mujer'); borrar1_bac()"><p>Mujer</p></div>
+                </div>
+        </div>
+        
+        <script>
+        	$('#c_genero').mousedown(function(){
+				$('#c_genero').css('background-color','#C7004B')
+				$('#c_edad').css('background-color','rgba(255,255,255,0)')
+				$('#op_genero').show()
+				$('#op_edad').hide()
+			})
+			$('#c_edad').mousedown(function(){
+				$('#c_edad').css('background-color','#C7004B')
+				$('#c_genero').css('background-color','rgba(255,255,255,0)')
+				$('#op_edad').show()
+				$('#op_genero').hide()
+			})
+			
+			function borrar1_bac(){
+				$('#c_edad').css('background-color','rgba(255,255,255,0)')
+				$('#c_genero').css('background-color','rgba(255,255,255,0)')
+				$('#op_edad').hide()
+				$('#op_genero').hide()
+			}
+        </script>
+        
+        
+        
+        
+        
+        <div class="campos" style="left:8%; width:84%; height:5%; top:36.5%">
+        	<p id="t_contrasena" class="crear" style="margin-left:5%">Contraseña:</p>
+            <input id="c_contrasena" name="c_contrasena" class="campo_texto" type="text" onFocus="borrar5()" onBlur="revisar5()">
+        </div>
+        
+        <div class="campos" style="left:8%; width:84%; height:5%; top:44%">
+        	<p id="t_codigo" class="crear" style="margin-left:5%">Código:</p>
+            <input id="c_codigo" name="c_codigo" class="campo_texto" type="text" onFocus="borrar6()" onBlur="revisar6()">
+        </div>
+        
+        <div id="terminos" class="campos" style="left:80%; width:12%; height:5%; top:51.5%; background-position:center; cursor:pointer">
+        </div>
+        
+        <div id="aviso" class="campos" style="left:8%; width:65%; height:5.5%; top:51.5%; border:none; text-align:right">
+        	<p style="width:100%;">Acepto el <span style="border-bottom:1px solid #FFFFFF">Aviso de Privacidad:</span></p>
+        </div>
+<!--        <div class="campos" style="left:8%; width:84%; height:8%; top:42%">
+        	<p id="t_contrasena" class="crear" style="margin-left:5%">Contraseña:</p>
+            <input id="c_contrasena" class="campo_texto" type="text" onFocus="borrar3()" onBlur="revisar3()">
+        </div>-->
+        
+        <script>
+			var tte=0
+			$('#terminos').click(function(){
+				if(tte==0){
+				$('#terminos').css('background','url(imagenes/palomita.png) no-repeat');
+				$('#terminos').css('background-size', 'auto 60%');
+				$('#terminos').css('background-position', 'center');
+				tte=1
+				}else{
+				$('#terminos').css('background','none');
+				tte=0
+				}
+			})
+		
+        	function borrar1(){
+				$('#t_nombre').html('')
+				$('#c_edad').css('background-color','rgba(255,255,255,0)')
+				$('#c_genero').css('background-color','rgba(255,255,255,0)')
+				$('#op_edad').hide()
+				$('#op_genero').hide()
+			}
+			function revisar1(){
+				if(document.getElementById('c_nombre').value==""){
+					$('#t_nombre').html('Nombre:')
+				}
+			}
+			
+			function borrar2(){
+				$('#t_email').html('')
+				$('#c_edad').css('background-color','rgba(255,255,255,0)')
+				$('#c_genero').css('background-color','rgba(255,255,255,0)')
+				$('#op_edad').hide()
+				$('#op_genero').hide()
+			}
+			function revisar2(){
+				if(document.getElementById('c_email').value==""){
+					$('#t_email').html('Email:')
+				}
+			}
+			
+			function borrar5(){
+				$('#t_contrasena').html('')
+				$('#c_edad').css('background-color','rgba(255,255,255,0)')
+				$('#c_genero').css('background-color','rgba(255,255,255,0)')
+				$('#op_edad').hide()
+				$('#op_genero').hide()
+			}
+			function revisar5(){
+				if(document.getElementById('c_contrasena').value==""){
+					$('#t_contrasena').html('Contraseña:')
+				}
+			}
+			
+			function borrar6(){
+				$('#t_codigo').html('')
+				$('#c_edad').css('background-color','rgba(255,255,255,0)')
+				$('#c_genero').css('background-color','rgba(255,255,255,0)')
+				$('#op_edad').hide()
+				$('#op_genero').hide()
+			}
+			function revisar6(){
+				if(document.getElementById('c_codigo').value==""){
+					$('#t_codigo').html('Código:')
+				}
+			}
+			
+        </script>
+            
+        <div id="bt_signup" class="botones" style="left:8%; width:84%; height:6%; top:60%; cursor:pointer; background:url(imagenes/bt_rosa.png) no-repeat; background-size:100% 100%; border:2px solid #FFFFFF">
+       	  <p class="bot" style="width:100%; text-align:center">Sign Up</p>
+        </div>
+            
+        <div class="t1" style="width:100%; text-align:center; top:69.5%">- o también puedes -</div>
+            
+        <div class="botones" style="left:8%; width:84%; height:6.5%; top:74.5%; background:url(imagenes/bt_face.png) no-repeat; background-size:100% 100%; border:none; cursor:pointer">
+   	    	<img src="imagenes/face.png" style="top:10%; height:80%; position:absolute; left:5%"/>
+            <p class="red" style="width:80%; text-align:left; left:20%">Log in con Facebook</p>
+        </div>
+        
+        <div class="botones" style="left:8%; width:84%; height:6.5%; top:83%; cursor:pointer; border:none; background:url(imagenes/bt_twitter.png) no-repeat; background-size:100% 100%;">
+        	<img src="imagenes/twitter.png" style="top:10%; height:80%; position:absolute; left:5%"/>
+            <p class="red" style="width:80%; text-align:left; left:20%">Log in con Twitter</p>
+        </div>
+        
+        
+        
+        <div id="bt_log" class="t1" style="width:100%; text-align:center; top:92.5%; cursor:pointer">¿Ya tienes una cuenta? Log in <img src="imagenes/flecha.png" height="6px"/></div>
+            
+            <!--<div id="bt_log" class="t1" style="width:100%; text-align:center; top:90%; cursor:pointer">¿Ya tienes una cuenta? Log in <img src="imagenes/flecha.png" height="8px"/></div>-->
+            
+            
+            
+       		<div id="ale" style="position:absolute; width:84%; left:8%; top:60%; height:12%; display:none">
+            	<div style="position:absolute; background-color:#C7004B; width:100%; height:38%">
+       	    		<img id="cierra" src="imagenes/cierra.png" style="position:absolute; height:70%; top:15%; right:2%"/> 
+                	<img src="imagenes/i.png" style="position:absolute; height:70%; top:15%; left:2%"/> 
+                	<div id="err" style="position:absolute; left:12%;">Error:</div>
+                </div>
+                
+                <div id="erro" style="position:absolute; top:43%; width:80%; left:10%; height:52%; font-family:ArialN">
+                	<p id="errores">Email incorrecto</p>
+                </div>
+                
+            </div>   
+            
+            </div>
+      </div><!--fin login-->
+      
+      
+      
+      
+      <div id="log" style="display:none">
+       	<div class="t1" style="width:100%; text-align:center; top:15%">Log in con tu cuenta</div>
+            
+        <div class="campos" style="left:8%; width:84%; height:8%; top:21%">
+        	<p class="crear" style="margin-left:5%">Email:</p>
+            <input class="campo_texto" type="text">
+        </div>
+        <div class="campos" style="left:8%; width:84%; height:8%; top:33%">
+        	<p class="crear" style="margin-left:5%">Contraseña:</p>
+            <input class="campo_texto" type="text">
+        </div>
+        
+            
+        <div id="bt_signup2" class="botones" style="left:8%; width:84%; height:8%; top:45%; ; background:url(imagenes/bt_rosa.png) no-repeat; background-size:100% 100%; border:none; cursor:pointer">
+       	  <p class="bot" style="width:100%; text-align:center">Login</p>
+        </div>
+        
+        <div class="botones" style="left:8%; width:84%; height:8%; top:57%; background-color:#33508C; background:url(imagenes/bt_face.png) no-repeat; background-size:100% 100%; border:none; cursor:pointer">
+   	    	<img src="imagenes/face.png" style="top:10%; height:80%; position:absolute; left:5%"/>
+            <p class="red" style="width:80%; text-align:left; left:20%">Conectate con Facebook</p>
+        </div>
+
+            
+      </div><!--fin login-->
+      
+      
+      
+      
+      
+      
+      
+      <!--///////////////////////////////////-->
+      
+      
+      <div id="votacion" style="display:none; margin-left:100%">
+      		<div class="t1" style="width:100%; text-align:center; top:15%">Selecciona la categoría:</div>
+            
+            <div id="bt_imagenes" class="campos bt_imagenes" style="left:8%; width:84%; height:8%; top:21%">
+                <p class="crear" style="left:5%">Imágenes</p>
+                <p class="crear" style="right:5%; position:absolute; text-align:right">(20 pts)</p>
+       	 	</div>
+            <div id="bt_videos" class="campos bt_videos" style="left:8%; width:84%; height:8%; top:33%">
+                <p class="crear" style="left:5%">Videos</p>
+                <p class="crear" style="right:5%; position:absolute; text-align:right">(2 pts)</p>
+       	 	</div>
+            <div id="bt_textos" class="campos bt_textos" style="left:8%; width:84%; height:8%; top:45%">
+                <p class="crear" style="left:5%">Marcas</p>
+                <p class="crear" style="right:5%; position:absolute; text-align:right">(10 pts)</p>
+       	 	</div>
+            <div id="bt_cuestionarios" class="campos bt_cuestionarios" style="left:8%; width:84%; height:8%; top:57%">
+                <p class="crear" style="left:5%">Cuestionarios</p>
+                <p class="crear" style="right:5%; position:absolute; text-align:right">(5 pts)</p>
+       	 	</div>
+            <div id="bt_check" class="campos bt_check" style="left:8%; width:84%; height:8%; top:69%">
+                <p class="crear" style="left:5%">Check In</p>
+                <p class="crear" style="right:5%; position:absolute; text-align:right">(2 pts)</p>
+       	 	</div>
+            
+            <div class="t1" style="width:100%; text-align:center; top:84%">Recuerda que solo puedes<br>
+votar 1 vez por campaña
+				<p style="position:absolute; left:15%">-</p>
+                <p style="position:absolute; right:15%">-</p>
+			</div>
+        
+      </div><!--fin votacion-->
+      
+      
+      
+      
+      
+      <div id="galeria" style="top:9%; height:91%; display:none; overflow:hidden">
+      		<div id="gal_im">
+            
+            </div>
+            
+            <iframe id="gal_che" src="gal_check.html" style="width:100%; height:100%; position:absolute; overflow:hidden; background:none; border:none; display:none"></iframe>
+      		<script>
+            	$('#gal_im').load('gal_imagenes.php')
+            </script>
+      </div><!--fin galeria-->
+      
+      
+      
+      <div id="ubicacion" style="display:none">
+        <div class="t1" style="width:100%; text-align:center; top:15%">¡Comparte tu ubicación al instante!</div>
+           
+          
+            
+        <div id="submit" class="campos" style="left:8%; width:84%; height:8%; top:21%; background:url(imagenes/ubi.png) no-repeat; background-size:auto 60%; background-position:95%">
+          <p class="crear" style="left:5%">OBTÉN TU UBICACIÓN</p>
+          <input id="latlng" type="text" value="19.714224,-99.961452" style="display:none"> 
+        </div>
+        
+        <div class="campos" style="left:8%; width:64%; height:8%; top:33%;">
+            <p id="t_lugar" class="crear" style="margin-left:5%">NOMBRE DEL LUGAR</p>
+            <input id="address" placeholder="" class="campo_texto" onFocus="borrar_nom()" onBlur="revisar_nom()" type="text"></input>  
+        </div>
+        
+        <div id="buscar" style="width:14%; height:8%; cursor:pointer; position:absolute; left:78%; top:33%; background:url(imagenes/lupa.png) no-repeat; background-position:center; background-size:auto 40%"></div>
+        
+        
+        <div id="map" style="position:absolute; top:45%; width:84%; left:8%; height:32%"></div>
+    <script>
+	
+		    function borrar_nom(){
+				$('#t_lugar').html('')
+			}
+			function revisar_nom(){
+				if(document.getElementById('address').value==""){
+					$('#t_lugar').html('NOMBRE DEL LUGAR')
+				}
+			}
+	
+	
+	  $('#submit').on( "vmousedown", function() {
+		  $(this).css('background', 'url(imagenes/bt_rosa.png) no-repeat')
+		  $(this).css('background-size', '100% 100%')
+	  });
+	  
+	  $('#submit').on( "vmouseup", function() {
+		  $(this).css('background', 'url(imagenes/ubi.png) no-repeat')
+		  $(this).css('background-size', 'auto 60%')
+		  $(this).css('background-position', '95%')
+	  });
+	  
+	  $('#buscar').on( "vmousedown", function() {
+		  $(this).css('background', 'url(imagenes/bt_rosa.png) no-repeat')
+		  $(this).css('background-size', '100% 100%')
+	  });
+	  
+	  $('#buscar').on( "vmouseup", function() {
+		  $(this).css('background', 'url(imagenes/lupa.png) no-repeat')
+		  $(this).css('background-size', 'auto 40%')
+		  $(this).css('background-position', 'center')
+	  });
+	
+	  var placeSearch, autocomplete;
+      function initAutocomplete() {
+        	autocomplete = new google.maps.places.Autocomplete(
+            (document.getElementById('address')),
+            {types: ['geocode']});
+        	autocomplete.addListener('place_changed', fillInAddress);
+      }
+	
+	
+	
+function initMap() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 14,
+    center: {lat: 19.3910038, lng: -99.2837008}
+  });
+ 
+  var infowindow = new google.maps.InfoWindow;
+  
+  var geocoder = new google.maps.Geocoder();
+
+  document.getElementById('buscar').addEventListener('click', function() {
+    geocodeAddress(geocoder, map);
+  });
+  
+  
+  
+  var image = 'imagenes/wi-fi.png';
+  var beachMarker = new google.maps.Marker({
+    position: {lat: 19.3910038, lng: -99.2837008},
+    map: map,
+    icon: image
+  });
+  
+  
+  google.maps.event.addListener(beachMarker,'click',function(){
+          mapa_centro()
+  });
+  
+
+/*  document.getElementById('submit').addEventListener('click', function() {
+    geocodeLatLng(geocoder, map);
+  });
+  */
+  
+  document.getElementById('submit').addEventListener('click', function() {    
+    geocodeLocation(geocoder, map);    
+  });
+  
+  document.getElementById('map_obten').addEventListener('click', function() {
+    geocodeLocation(geocoder, map);
+	$('#mapas').css('z-index', '1')
+    $('#ubicacion').css('z-index', '2')
+			 //$('#retroalimentacion').css('z-index', '0')
+			 //$('#log').css('z-index', '0')
+			 //$('#login').css('z-index', '0')
+			 
+			 $('#atras').fadeOut()
+			 $('#alerta, #alerta2').fadeIn()
+			 $('#atras').css('right','19%')
+			 
+			 $('#ubicacion').show()
+			 $('#ubicacion').css('margin-left', '100%')
+			 $('#ubicacion').animate({marginLeft:'0%'}, 500)
+			 at=0
+  });
+  
+
+  
+  
+}
+
+
+function geocodeAddress(geocoder, resultsMap) {
+  var address = document.getElementById('address').value;
+  geocoder.geocode({'address': address}, function(results, status) {
+    if (status === google.maps.GeocoderStatus.OK) {
+      resultsMap.setCenter(results[0].geometry.location);
+      
+	  var marker = new google.maps.Marker({
+        map: resultsMap,
+        position: results[0].geometry.location
+      });
+    } else {
+      alert('Geocode was not successful for the following reason: ' + status);
+    }
+  });
+}
+
+
+
+function geocodeLocation(geocoder, resultsMap) {    
+  var input = document.getElementById('latlng').value;    
+  var latlngStr = input.split(',', 2);    
+  var latlng = {lat: parseFloat(latlngStr[0]), lng:        parseFloat(latlngStr[1])};    
+  geocoder.geocode({'location': latlng}, function(results, status) {    
+    if (status === google.maps.GeocoderStatus.OK) {    
+      resultsMap.setCenter(results[0].geometry.location);    
+      var marker = new google.maps.Marker({    
+        map: resultsMap,    
+        position: results[0].geometry.location    
+      });    
+    } else {    
+      alert('Geocode was not successful for the following reason: ' + status);    
+    }    
+  }); 
+}
+
+
+
+
+function geocodeLatLng(geocoder, map) {
+  var input = document.getElementById('latlng').value;
+  var latlngStr = input.split(',', 2);
+  var myLatLng = {lat: parseFloat(latlngStr[0]), lng: parseFloat(latlngStr[1])};
+	
+  map.setCenter(new GLatLng(parseFloat(latlngStr[0]), parseFloat(latlngStr[1])));	
+	
+	
+  /*var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 14,
+    center: myLatLng
+  });*/
+ 
+  /*var imageb = 'imagenes/wi-fi.png';
+  var beachMarkerb = new google.maps.Marker({
+    position: {lat: 19.3910038, lng: -99.2837008},
+    map: map,
+    icon: imageb
+  });
+  
+  google.maps.event.addListener(beachMarkerb,'click',function(){
+          mapa_centro()
+  });*/
+  
+ /* var marker = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+  });*/
+  
+  
+  
+  
+}
+
+
+  
+  
+
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false&callback=initMap&signed_in=true&libraries=places&callback=initAutocomplete"
+        async defer></script>
+    
+    
+
+    
+    	<div class="t1" style="width:100%; text-align:center; top:82%">- compártela con tu amigos -</div>
+        
+        <div class="botones" style="left:8%; width:84%; height:8%; top:88%; background:url(imagenes/bt_face.png) no-repeat; background-size:100% 100%; border:none">
+   	    	<img src="imagenes/face.png" style="top:10%; height:80%; position:absolute; left:5%"/>
+            <p class="red" style="width:80%; text-align:left; left:20%">Compartir en Facebook</p>
+        </div>
+    
+        
+     </div><!--fin ubicacion-->
+     
+     
+     
+     
+     <div id="retroalimentacion" style="display:none">
+        <div class="t1" style="width:100%; text-align:center; top:15%">¡Retroalimenta y gana más puntos!</div>
+            
+       <div id="retro_comenzar" class="campos" style="left:8%; width:84%; height:8%; top:21%; ">
+          <p class="crear" style="left:5%">Comenzar</p>
+          <p class="crear" style="right:5%; position:absolute; text-align:right">(5 pts)</p>
+        </div>
+        
+        <div id="retro_saltar" class="campos" style="left:8%; width:84%; height:8%; top:33%;">
+          <p class="crear" style="left:5%">Saltar este paso</p>
+        </div>
+       
+   	    <div class="t1" style="width:100%; text-align:center; top:45%">- danos tu opinión -</div>
+        
+        <img src="imagenes/galeria/im2.jpg" style="position:absolute; width:74%; left:13%; top:50%"/> 
+      
+        <script>
+        	  $('#retro_comenzar, #retro_saltar').on( "vmousedown", function() {
+				  $(this).css('background', 'url(imagenes/bt_rosa.png) no-repeat')
+				  $(this).css('background-size', '100% 100%')
+			  });
+			  
+			  $('#retro_comenzar, #retro_saltar').on( "vmouseup", function() {
+				  $(this).css('background', 'none')
+			  });
+        </script>
+      
+      </div><!--fin retroalimentacion-->
+      
+      
+      <div id="monedero" style="display:none">
+        <div class="t1" style="width:100%; text-align:center; top:15%">Selecciona la categoría que desees:</div>
+            
+       <div class="campos" style="left:8%; width:84%; height:8%; top:21%; ">
+          <p class="crear" style="left:5%">SALDO TOTAL</p>
+          <p class="crear" style="right:5%; position:absolute; text-align:right">(1565 pts)</p>
+        </div>
+        
+        <div id="bt_canjear" class="campos" style="left:8%; width:84%; height:8%; top:33%;">
+          <p class="crear" style="left:5%">CANJEAR MIS PUNTOS</p>
+          <div id="canjear" style="width:80%; height:400%; background-color:rgba(255,255,255,1.00); top:92%; position:absolute; padding-left:10%; padding-right:10%; display:none; overflow:hidden">
+          	 <div id="can1" style="position:absolute; width:80%; height:25%; border-bottom:1px solid rgba(217,217,217,1.00); color:#000000"><p style="left:0%">Tiempo Aire <b>$20</b></p><p style="right:0%">(200pts)</p></div>
+             <div id="can2" style="position:absolute; width:80%; height:25%; border-bottom:1px solid rgba(217,217,217,1.00); color:#000000; top:25%"><p style="left:0%">Tiempo Aire <b>$50</b></p><p style="right:0%">(500pts)</p></div>	
+             <div id="can3" style="position:absolute; width:80%; height:25%; border-bottom:1px solid rgba(217,217,217,1.00); color:#000000; top:50%"><p style="left:0%">Dinero iTunes <b>$100</b></p><p style="right:0%">(1000pts)</p></div>
+             <div id="can4" style="position:absolute; width:80%; height:25%; border-bottom:1px solid rgba(217,217,217,1.00); color:#000000; top:75%"><p style="left:0%">Dinero iTunes <b>$200</b></p><p style="right:0%">(2000pts)</p></div>	
+          </div>
+        </div>
+        
+        <div id="bt_movimientos" class="campos" style="left:8%; width:84%; height:8%; top:45%;">
+          <p class="crear" style="left:5%">VER MIS MOVIMIENTOS</p>
+          <div id="movimientos" style="width:80%; height:400%; background-color:rgba(255,255,255,1.00); top:92%; position:absolute; padding-left:10%; padding-right:10%; display:none; overflow:hidden">
+          	 <div style="position:absolute; width:80%; height:25%; border-bottom:1px solid rgba(217,217,217,1.00); color:#000000"><p style="left:0%">Tiempo Aire - 200 pts <p style="right:0%">10/ene/2016</p></div>
+             <div style="position:absolute; width:80%; height:25%; border-bottom:1px solid rgba(217,217,217,1.00); color:#000000; top:25%"><p style="left:0%">Encuesta + 60 pts</p><p style="right:0%">3/ene/2016</p></div>	
+             <div style="position:absolute; width:80%; height:25%; border-bottom:1px solid rgba(217,217,217,1.00); color:#000000; top:50%"><p style="left:0%">Votación + 30 pts</p><p style="right:0%">2/ene/2016</p></div>
+             <div style="position:absolute; width:80%; height:25%; border-bottom:1px solid rgba(217,217,217,1.00); color:#000000; top:75%"><p style="left:0%"><b>Saldo Total</b></p><p style="right:0%">1565 pts</p></div>	
+          </div>
+          
+          
+        </div>
+        
+        <div id="bt_alta" class="campos" style="left:8%; width:84%; height:8%; top:57%;">
+          <p class="crear" style="left:5%">DAR DE ALTA CUENTA</p>
+          <div id="alta" style="width:80%; height:400%; background-color:rgba(255,255,255,1.00); top:92%; position:absolute; padding-left:10%; padding-right:10%; display:none; overflow:auto; overflow-x:hidden">
+       	    <div style="position:relative; float:left; width:100%; height:25%; border-bottom:1px solid rgba(217,217,217,1.00); color:#000000"><p style="left:0%">Amazon<div style="right:0%; position:absolute; width:50%; background-image:url(imagenes/amazon.png); height:100%; background-repeat:no-repeat; background-position:right; background-size:auto 50%"></div>
+          	 </div>
+             <div style="position:relative; float:left; width:100%; height:25%; border-bottom:1px solid rgba(217,217,217,1.00); color:#000000;"><p style="left:0%">CFE<div style="right:0%; position:absolute; width:50%; background-image:url(imagenes/cfe.png); height:100%; background-repeat:no-repeat; background-position:right; background-size:auto 50%"></div></div>	
+             <div style="position:relative; float:left; width:100%; height:25%; border-bottom:1px solid rgba(217,217,217,1.00); color:#000000;"><p style="left:0%">Itunes</p><div style="right:0%; position:absolute; width:50%; background-image:url(imagenes/itunes.png); height:100%; background-repeat:no-repeat; background-position:right; background-size:auto 50%"></div></div>
+             <div style="position:relative; float:left; width:100%; height:25%; border-bottom:1px solid rgba(217,217,217,1.00); color:#000000;"><p style="left:0%">Spotify</p><div style="right:0%; position:absolute; width:50%; background-image:url(imagenes/spotify.png); height:100%; background-repeat:no-repeat; background-position:right; background-size:auto 50%"></div></div>
+             <div style="position:relative; float:left; width:100%; height:25%; border-bottom:1px solid rgba(217,217,217,1.00); color:#000000;"><p style="left:0%">Tag</p><div style="right:0%; position:absolute; width:50%; background-image:url(imagenes/iave.png); height:100%; background-repeat:no-repeat; background-position:right; background-size:auto 50%"></div></div>
+             <div style="position:relative; float:left; width:100%; height:25%; border-bottom:1px solid rgba(217,217,217,1.00); color:#000000"><p style="left:0%; width:50%">Telcel</p><div style="right:0%; position:absolute; width:50%; background-image:url(imagenes/telcel.png); height:100%; background-repeat:no-repeat; background-position:right; background-size:auto 50%"></div></div>
+             <div style="position:relative; float:left; width:100%; height:25%; border-bottom:1px solid rgba(217,217,217,1.00); color:#000000"><p style="left:0%">-</p><p style="left:0%; text-align:right; width:50%; margin-left:50%; color:#C7004B; font-size:12px"><b>Agregar +</b></p></div>
+          </div>
+        </div>
+        
+        <script>
+        $('#bt_canjear').click(function(){
+			$('#alta').fadeOut(200)
+			$('#movimientos').fadeOut(200)
+			$('#canjear').delay(200).fadeIn(500)
+			$('#bt_movimientos').animate({top:'76%'}, 500)
+			$('#bt_alta').animate({top:'88%'}, 500)
+		})
+		
+		$('#bt_movimientos').click(function(){
+			$('#alta').fadeOut(200)
+			$('#canjear').fadeOut(200)
+			$('#movimientos').delay(200).fadeIn(500)
+			$('#bt_movimientos').animate({top:'45%'}, 500)
+			$('#bt_alta').animate({top:'88%'}, 500)
+		})
+		
+		$('#bt_alta').click(function(){
+			$('#movimientos').fadeOut(200)
+			$('#canjear').fadeOut(200)
+			$('#alta').delay(200).fadeIn(500)
+			$('#bt_movimientos').animate({top:'45%'}, 500)
+			$('#bt_alta').animate({top:'57%'}, 500)
+		})
+        </script>
+        
+      </div><!--fin monedero-->
+      
+      
+      
+      <div id="canje" style="display:none; overflow:auto; overflow-x:hidden">
+        <div class="t2" style="width:100%; text-align:center; top:15%">¡Feliciddes!</div>
+        
+        
+        <div class="t1" style="width:100%; text-align:center; top:35%">
+Ahora ya puedes escuchar tu<br>
+música favorita desde donde queiras<br>
+y cuando quieras.
+		</div>
+        
+      	<img src="imagenes/galeria/itunes.png" style="width:60%; left:20%; top:47%; position:absolute"/> 
+      
+      </div><!--fin canje-->
+      
+      
+      
+      
+      <div id="mapas" style="display:none">
+        <div class="t1" style="width:100%; text-align:center; top:15%">Ubicación, Wifi y  Mapa personalizado:</div>
+        
+        
+        <div id="map_obten" class="campos" style="left:8%; width:84%; height:8%; top:21%; background:url(imagenes/ubi.png) no-repeat; background-size:auto 60%; background-position:95%">
+          <p class="crear" style="left:5%">OBTÉN TU UBICACIÓN</p>
+        </div>
+        
+        <div id="map_wifi" class="campos" style="left:8%; width:84%; height:8%; top:33%; background:url(imagenes/abajo.png) no-repeat; background-size:auto 38%; background-position:94%">
+          <p class="crear" style="left:5%;">CONEXION WIFI</p>
+        </div>
+        
+        <script>
+		
+		  $('#map_obten').on( "vmousedown", function() {
+			  $(this).css('background', 'url(imagenes/bt_rosa.png) no-repeat')
+			  $(this).css('background-size', '100% 100%')
+		  })
+		   $('#map_obten').on( "vmouseup", function() {
+			 $(this).css('background', 'url(imagenes/ubi.png) no-repeat')
+			 $(this).css('background-size', 'auto 60%')
+			 $(this).css('background-position', '95%')
+		  })
+		  
+		  $('#map_wifi').on( "vmousedown", function() {
+			  $(this).css('background', 'url(imagenes/bt_rosa.png) no-repeat')
+			  $(this).css('background-size', '100% 100%')
+		  })
+		   $('#map_wifi').on( "vmouseup", function() {
+			 $(this).css('background', 'url(imagenes/abajo.png) no-repeat')
+			 $(this).css('background-size', 'auto 38%')
+			 $(this).css('background-position', '94%')
+		  })
+        
+		</script>
+        
+        
+        
+        <div id="centro" style="position:absolute; top:45%; width:84%; left:8%; height:35%; overflow:hidden; background:url(../imagenes/verde.png) no-repeat; background-size:100% 100%;">
+   	    	<img src="imagenes/mapota.png" height="100%" style="position:absolute;"/>
+        </div>
+        
+        <div class="t1" style="width:100%; text-align:center; top:84%">
+Es posible que tu navegador solicite<br>
+permiso para acceder a tu ubicación. Haz<br>
+click en "Permitir" para continuar.
+		</div>
+      
+      </div><!--fin mapas-->
+      
+      
+      
+      <div id="mapas_grande" style="display:none; overflow:hidden">
+      
+      		<div id="contenido" style="position:absolute; width:1200px; height:600px; left:50%; margin-left:-600px; top:50%; margin-top:-300px;">
+                <div id="mapota">
+           	    	<img id="adidas" src="imagenes/adidasg.png" width="120" style="position:absolute; left:510px; top:530px; display:none"/> 
+               </div>
+			</div>
+      
+<!--      
+      
+   	    	<img src="imagenes/mapas/mapa1.jpg" style="position:absolute; top:-40%; left:-200px; height:150%"/> -->
+            
+        <div class="gris" style="position:absolute; width:100%; height:8%; top:92%; background-color:#414042; z-index:10">
+       	  <p class="crear" style="left:5%;">Galerias Vallarta PA</p>
+          <img id="busc" src="imagenes/buscar.png" style="position:absolute; height:74%; right:25%; top:13%"/>
+          <img src="imagenes/wifi.png" style="position:absolute; height:74%; right:5%; top:13%"/>
+          
+          <input id="bus" type="text" style="position:absolute; width:45%; height:60%; top:20%; left:5%; border:none; display:none; padding-left:5%">
+          
+          <script>
+          $('#busc').click(function(){
+		  	$('#bus').fadeIn(800)
+			if(document.getElementById('bus').value=="adidas"){
+				$('#adidas').fadeIn(100)
+				$('#mapota').animate({left:'1400px', top:'-100px'},600)
+			}
+		  })
+		  </script>
+          
+        </div>
+        
+        
+      </div><!--fin mapas-->
+      
+      
+      
+      <div id="localizador" style="display:none">
+        <div class="t1" style="width:100%; text-align:center; top:14%">Mi cuenta</div>
+            
+        <div id="lo_1" class="campos" style="left:8%; width:84%; height:8%; top:20%;background:url(imagenes/edi.png) no-repeat; background-size:auto 60%; background-position:94%">
+          <p class="crear" style="left:5%">Nombre: Alessa Auditore</p>
+        </div>
+        
+        <div id="lo_2" class="campos" style="left:8%; width:84%; height:8%; top:31%;">
+          <p class="crear" style="left:5%">Email: alessa@auditore.com</p>
+        </div>
+        
+        <div id="lo_3" class="campos" style="left:8%; width:84%; height:8%; top:42%;">
+          <p class="crear" style="left:5%">Tel: 55-6789-9876</p>
+        </div>
+        
+        <div id="lo_4" class="campos" style="left:8%; width:84%; height:8%; top:53%;">
+          <p class="crear" style="left:5%">Cuentas vinculadas</p>
+          	<div id="alta2" style="width:80%; height:300%; background-color:rgba(255,255,255,1.00); top:92%; position:absolute; padding-left:10%; padding-right:10%; display:none; overflow:auto; overflow-x:hidden; z-index:1000">
+       	    <div style="position:relative; float:left; width:100%; height:33%; border-bottom:1px solid rgba(217,217,217,1.00); color:#000000"><p style="left:0%">Amazon<div style="right:0%; position:absolute; width:50%; background-image:url(imagenes/amazon.png); height:100%; background-repeat:no-repeat; background-position:right; background-size:auto 50%"></div>
+          	 </div>
+             <div style="position:relative; float:left; width:100%; height:33%; border-bottom:1px solid rgba(217,217,217,1.00); color:#000000;"><p style="left:0%">CFE<div style="right:0%; position:absolute; width:50%; background-image:url(imagenes/cfe.png); height:100%; background-repeat:no-repeat; background-position:right; background-size:auto 50%"></div></div>	
+             <div style="position:relative; float:left; width:100%; height:33%; border-bottom:1px solid rgba(217,217,217,1.00); color:#000000;"><p style="left:0%">Itunes</p><div style="right:0%; position:absolute; width:50%; background-image:url(imagenes/itunes.png); height:100%; background-repeat:no-repeat; background-position:right; background-size:auto 50%"></div></div>
+
+          </div>
+        </div>
+        <div id="lo_5" class="campos" style="left:8%; width:84%; height:8%; top:64%;">
+          <p class="crear" style="left:5%">CERRAR SESIÓN</p>
+        </div>
+        
+        <script>
+		  $('#lo_4').on( "vmousedown", function() {
+			  $(this).css('background', 'url(imagenes/bt_rosa.png) no-repeat')
+			  $(this).css('background-size', '100% 100%')
+			  $('#lo_5').animate({top:'87%'}, 400)
+			  $('#alta2').delay(300).fadeIn(400)
+		  })
+		  
+		  $('#lo_1, #lo_2, #lo_3, #lo_5').on( "vmousedown", function() {
+			  $(this).css('background', 'url(imagenes/bt_rosa.png) no-repeat')
+			  $(this).css('background-size', '100% 100%')
+			  $('#lo_4').css('background', 'none')
+			  $('#lo_5').delay(300).animate({top:'64%'}, 400)
+			  $('#alta2').fadeOut(400)
+		  })
+		   $('#lo_2, #lo_3, #lo_5').on( "vmouseup", function() {
+			 $(this).css('background', 'none')
+		  })
+		  
+		  $('#lo_1').on( "vmouseup", function() {
+			 $(this).css('background', 'url(imagenes/edi.png) no-repeat')
+			 $(this).css('background-position', '94%')
+			 $(this).css('background-size', 'auto 60%')
+		  })
+        
+		</script>
+      </div><!--fin localizador-->
+      
+      
+      
+      <div id="editar" style="display:none">
+            <div class="t1" style="width:100%; text-align:center; top:14%">Editar Perfil:</div>
+                
+            <div id="lo_1" class="campos" style="left:8%; width:84%; height:8%; top:20%;">
+              <p class="crear" style="left:5%">Alessa Auditore</p>
+            </div>
+            
+            <div id="lo_2" class="campos" style="left:8%; width:84%; height:8%; top:31%;">
+              <p class="crear" style="left:5%">alessa@auditore.com</p>
+            </div>
+            
+            <div id="lo_3" class="campos" style="left:8%; width:84%; height:8%; top:42%;">
+              <p class="crear" style="left:5%">55-6789-9876</p>
+            </div>
+            
+            <div id="c_edad2" class="campos" style="left:8%; width:40%; height:8%; top:53%; background:url(imagenes/abajo.png) no-repeat; background-size:auto 38%; background-position:90%">
+        	<p id="t_edad2" class="crear" style="margin-left:5%">Edad</p>
+            
+            	<div id="op_edad2" style="position:absolute; background-color:#fff; width:100%; height:240%; top:100%; z-index:1000; overflow:scroll; overflow-x:hidden; display:none">
+       	    		<div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left;" onClick="$('#t_edad2').html('18'); borrar1_bac2()"><p>18</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad2').html('19'); borrar1_bac2()"><p>19</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad2').html('20'); borrar1_bac2()"><p>20</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad2').html('21'); borrar1_bac2()"><p>21</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad2').html('22'); borrar1_bac2()"><p>22</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad2').html('23'); borrar1_bac2()"><p>23</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad2').html('24'); borrar1_bac2()"><p>24</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad2').html('25'); borrar1_bac2()"><p>25</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad2').html('26'); borrar1_bac2()"><p>26</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad2').html('27'); borrar1_bac2()"><p>27</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad2').html('28'); borrar1_bac2()"><p>28</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad2').html('29'); borrar1_bac2()"><p>29</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad2').html('30'); borrar1_bac2()"><p>30</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad2').html('31'); borrar1_bac2()"><p>31</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad2').html('32'); borrar1_bac2()"><p>32</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad2').html('33'); borrar1_bac2()"><p>33</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad2').html('34'); borrar1_bac2()"><p>34</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad2').html('35'); borrar1_bac2()"><p>35</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad2').html('36'); borrar1_bac2()"><p>36</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad2').html('37'); borrar1_bac2()"><p>37</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad2').html('38'); borrar1_bac2()"><p>38</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad2').html('39'); borrar1_bac2()"><p>39</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad2').html('40'); borrar1_bac2()"><p>40</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad2').html('41'); borrar1_bac2()"><p>41</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad2').html('42'); borrar1_bac2()"><p>42</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad2').html('43'); borrar1_bac2()"><p>43</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad2').html('44'); borrar1_bac2()"><p>44</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad2').html('45'); borrar1_bac2()"><p>45</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad2').html('46'); borrar1_bac2()"><p>46</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad2').html('47'); borrar1_bac2()"><p>47</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad2').html('48'); borrar1_bac2()"><p>48</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad2').html('49'); borrar1_bac2()"><p>49</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad2').html('50'); borrar1_bac2()"><p>50</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad2').html('51'); borrar1_bac2()"><p>51</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad2').html('52'); borrar1_bac2()"><p>52</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad2').html('53'); borrar1_bac2()"><p>53</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad2').html('54'); borrar1_bac2()"><p>54</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad2').html('55'); borrar1_bac2()"><p>55</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad2').html('56'); borrar1_bac2()"><p>56</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad2').html('57'); borrar1_bac2()"><p>57</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad2').html('58'); borrar1_bac2()"><p>58</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad2').html('59'); borrar1_bac2()"><p>59</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad2').html('60'); borrar1_bac2()"><p>60</p></div>
+                </div>
+        </div>
+        
+        <div id="c_genero2" class="campos" style="left:52%; width:40%; height:8%; top:53%; background:url(imagenes/abajo.png) no-repeat; background-size:auto 38%; background-position:90%">
+        	<p id="t_genero2" class="crear" style="margin-left:5%">Género</p>
+            
+                 <div id="op_genero2" style="position:absolute; background-color:#fff; width:100%; height:120%; top:100%; z-index:1000; display:none">
+       	    		<div class="t3" style="height:50%; width:85%; left:5%; color:#C7004B; position:relative; float:left;" onClick="$('#t_genero2').html('Hombre'); borrar1_bac2()"><p>Hombre</p></div>
+                    <div class="t3" style="height:50%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_genero2').html('Mujer'); borrar1_bac2()"><p>Mujer</p></div>
+                </div>
+        </div>
+        
+        <script>
+        	$('#c_genero2').mousedown(function(){
+				$('#c_genero2').css('background-color','#C7004B')
+				$('#c_edad2').css('background-color','rgba(255,255,255,0)')
+				$('#op_genero2').show()
+				$('#op_edad2').hide()
+			})
+			$('#c_edad2').mousedown(function(){
+				$('#c_edad2').css('background-color','#C7004B')
+				$('#c_genero2').css('background-color','rgba(255,255,255,0)')
+				$('#op_edad2').show()
+				$('#op_genero2').hide()
+			})
+			
+			function borrar1_bac2(){
+				$('#c_edad2').css('background-color','rgba(255,255,255,0)')
+				$('#c_genero2').css('background-color','rgba(255,255,255,0)')
+				$('#op_edad2').hide()
+				$('#op_genero2').hide()
+			}
+        </script>
+            
+            
+      </div>
+      
+      
+      
+      
+      <div id="codigo" style="display:none">
+        <div class="t1" style="width:100%; text-align:center; top:15%; line-height:20px;">¡Invita a un amigo, compartiéndo<br>tu código de cliente y obtén hasta<br>100 puntos por cada nuevo usuario!</div>
+        
+        
+        <div class="botones bt_cod" style="left:8%; width:84%; height:8%; top:31%; border-color:#fff; cursor:pointer">
+   	    	<img src="imagenes/mail.png" style="top:10%; height:80%; position:absolute; left:5%"/>
+            <p class="red" style="width:80%; text-align:left; left:20%">Comparte vía E-mail</p>
+        </div>
+        
+        <div class="botones bt_cod" style="left:8%; width:84%; height:8%; top:43%; border-color:#fff; cursor:pointer">
+   	    	<img src="imagenes/SMS.png" style="top:10%; height:80%; position:absolute; left:5%"/>
+            <p class="red" style="width:80%; text-align:left; left:20%">Comparte vía SMS</p>
+        </div>
+        
+        <script>
+        	$('.bt_cod').mousedown(function(){
+				$(this).css('background-color','#C7004B')
+			})
+			$('.bt_cod').mouseup(function(){
+				$(this).css('background-color','rgba(255,255,255,0)')
+			})
+        </script>
+        
+        
+        <div class="botones" style="left:8%; width:84%; height:8%; top:55%; background:url(imagenes/bt_face.png) no-repeat; background-size:100% 100%; border:none; cursor:pointer">
+   	    	<img src="imagenes/face.png" style="top:10%; height:80%; position:absolute; left:5%"/>
+            <p class="red" style="width:80%; text-align:left; left:20%">Compartir en Facebook</p>
+        </div>
+        
+        <img id="codi" src="imagenes/codigo.png" style="position:absolute; top:70%; left:8%; width:84%;"/>
+        
+        <div class="cod" style="width:60%; left:26%; position:absolute; top:70%;">GPW1501</div>
+
+        
+        <div id="bt_log" class="t1" style="width:100%; text-align:center; top:91%; cursor:pointer">Conocer más acerca de <img src="imagenes/flecha.png" height="8px"/></div>
+
+      </div><!--fin codigo-->
+      
+      
+      
+      
+      
+      
+      </div><!--fin todo-->
+      
+      
+      
+      <div id="opciones" style="top:9%; display:none; z-index:99">
+      	
+        <div id="bt_votacion" class="menu" style="background-color:#7457C0;">
+        	<p class="menu_titulo" style="left:12%">Votación</p>
+        </div>
+        
+        <div id="bt_monedero" class="menu" style="background-color:#C7004B">
+        	<p class="menu_titulo" style="left:12%">Monedero Virtual</p>
+        </div>
+        
+        <div id="bt_mapas" class="menu" style="background-color:#75C474;">
+        	<p class="menu_titulo" style="left:12%">Mapas / Centros...</p>
+        </div>
+        
+        <div id="bt_codigo" class="menu" style="background-color:#FBB040;">
+        	<p class="menu_titulo" style="left:12%">Código de cliente</p>
+        </div>
+        
+        <div id="bt_cuenta" class="menu" style="background-color:#475CA9;">
+        	<p class="menu_titulo" style="left:12%">Mi cuenta</p>
+        </div>
+        
+      </div>
+      
+      
+      
+      
+        
+        
+        
+        <div id="menu" style="z-index:100">
+       	  <div style="position:absolute; height:100%; margin-left:1%; width:94%">
+       		<p id="titulo_seccion" style="left:26%">Registro</p>
+            
+            <img id="loguito" src="imagenes/loguito.png" style="position:absolute; height:80%; left:5%; top:10%"/>
+            <img id="div2" src="imagenes/division.png" style="position:absolute; height:80%; left:20%; top:10%"/>
+            
+            <img id="div1" src="imagenes/division.png" style="position:absolute; height:80%; right:33%; top:10%; display:none"/>
+            <img id="alerta" src="imagenes/alerta.png" style="position:absolute; height:60%; right:19%; top:20%; display:none"/>
+            
+            <img id="atras" src="imagenes/atras.png" style="position:absolute; height:50%; right:20%; top:25%; display:none"/>
+            <img id="div3" src="imagenes/division.png" style="position:absolute; height:80%; right:14%; top:10%; display:none"/> 
+            <img id="abrir_menu" src="imagenes/menu.png" style="position:absolute; height:60%; right:1%; top:20%; display:none"/>
+            <img id="cerrar_menu" src="imagenes/cerrar.png" style="position:absolute; height:60%; right:1%; top:20%; display:none"/>
+            
+            <div id="alerta2" style="position:absolute; height:60%; right:28%; top:20%; display:none"><b>2</b></div>
+           
+           <div id="bloquea" style="position:absolute; width:100%; height:1200%; background-color:rgba(0,0,0,.5); display:none"></div> 
+            
+            <div id="ales" style="position:absolute; width:50%; height:auto; right:14%; top:101%; font-family:Arial; color:#000; display:none; z-index:10">
+                <div class="alertas" style="width:90%; height:40px; padding-right:10%; text-align:right; border-bottom:1px dashed rgba(150,150,150,.5); padding-top:4px; padding-bottom:4px">El cargo se Realizo</div>
+                <div class="alertas" style="width:90%; height:40px; padding-right:10%; text-align:right; padding-top:4px; padding-bottom:4px">Nuevas promociones</div>
+                
+            </div>
+            </div>
+        </div><!--fin menu-->
+    </div><!--fin contenedor-->
+    
+      <script>
+	  var width
+	  var height
+	  inicio()
+	  
+	  
+	  $('#alerta').mousedown(function(){
+	  	$('#ales').fadeIn(800)
+		$('#bloquea').show()
+	  })
+	  
+	  $('#bloquea').mousedown(function(){
+	  	$('#ales').fadeOut(800)
+		$('#bloquea').hide()
+	  })
+	  
+	  
+	  
+	  
+      function inicio(){
+				var $window = $(window);
+				width = $window.width();
+				height = $window.height();
+				$('#titulo_seccion').css('font-size', height/20+'px')
+				$('.t1').css('font-size', height/37+'px')
+				$('.t1').css('line-height', height/30+'px')
+				$('#aviso').css('font-size', height/28+'px')
+				$('.t2').css('font-size', height/7+'px')
+				$('.t3').css('font-size', height/35+'px')
+				$('.campo_texto').css('font-size', height/35+'px')
+				$('.crear').css('font-size', height/30+'px')
+				$('.bot').css('font-size', height/25+'px')
+				$('.red').css('font-size', height/28+'px')
+				$('#bt_log').css('font-size', height/40+'px')
+				$('.estrellas').css('height', (height/15)+'px')
+				$('.es2').css('height', (height/24)+'px')
+				$('.es2').css('top', (height/110)+'px')
+				$('.menu_titulo').css('font-size', (height/14)+'px')
+				$('.cod').css('font-size', height/20+'px')
+				$('#err').css('font-size', height/26+'px')
+				$('#erro').css('font-size', height/40+'px')
+				$('#bus').css('font-size', height/40+'px')
+				
+				$('#alerta2').css('font-size', height/35+'px')
+				
+				$('.alertas').css('font-size', height/45+'px')
+				$('.alertas').css('height', height/22+'px')
+				$('.alertas').css('line-height', height/22+'px')
+				
+				var alto_cod = $('#codi').height()
+				$('.cod').css('line-height', alto_cod+'px')
+				$('.cod').css('height', alto_cod+'px')
+				$('.cod').css('font-size', height/9+'px')
+				
+				
+				//document.getElementById('c_nombre').value=localStorage.getItem('nombre')
+	  }
+	  
+	  
+	  var at=0
+	  var reg
+	  $('#bt_signup').click(function(){
+		  
+		var email = $("input#c_email").val();
+		var nombre = $("input#c_nombre").val();
+		var edad = document.getElementById('t_edad').innerHTML
+		var genero = document.getElementById('t_genero').innerHTML
+		var contrasena = $("input#c_contrasena").val();
+		
+		var filtro = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;	
+		
+		
+		if (!filtro.test(email)) {
+			$('#ale').fadeIn()
+			$('#errores').html('Email incorrecto')
+		}else if(nombre=="Nombre:" || nombre==""){
+			$('#ale').fadeIn()
+			$('#errores').html('Debes ingresar tu nombre')
+		}else if(edad=="Edad" || edad==""){
+			$('#ale').fadeIn()
+			$('#errores').html('Debes ingresar tu edad')
+		}else if(genero=="Género" || genero==""){
+			$('#ale').fadeIn()
+			$('#errores').html('Debes ingresar tu género')
+		}else if(contrasena=="Contraseña:" || contrasena=="" || contrasena.length<8){
+			$('#ale').fadeIn()
+			$('#errores').html('La contraseña debe tener al menos 8 caracteres')
+		}else if(tte==0){
+			$('#ale').fadeIn()
+			$('#errores').html('Debes aceptar los terminos y condiciones')
+		}else{
+		  	 localStorage.setItem("nombre", $("input#c_nombre").val());
+			 
+			 $('#votacion').css('z-index', '1')
+			 $('#log').css('z-index', '0')
+			 $('#login').css('z-index', '0')
+			  
+			 $('#votacion').show()
+			 $('#votacion').css('margin-left', '100%')
+			 $('#votacion').animate({marginLeft:'0%'}, 500)
+			 $('#div1, #div3, #alerta, #alerta2, #abrir_menu').fadeIn(800)
+			 $('#titulo_seccion').html('Votacion')
+		}
+      })
+	  
+	  
+	  $('#cierra').click(function(){
+		 $('#ale').fadeOut()
+      })
+	  
+	  
+	  $('#bt_log').click(function(){
+		 $('#log').show()
+		 $('#log').css('z-index', '1')
+		 $('#login').css('z-index', '0')
+		 $('#log').css('margin-left', '100%')
+		 $('#log').animate({marginLeft:'0%'}, 500)
+		 $('#atras').fadeIn(800)
+		 $('#atras').css('right','1%')
+		 $('#titulo_seccion').html('Log in')
+		 at=1
+      })
+	  
+	  
+	  
+	   
+	  
+	  
+	  $('#atras').click(function(){
+		  if(at==1){
+			 $('#login').show()
+			 $('#login').css('z-index', '1')
+			 $('#log').css('z-index', '0')
+			 $('#login').css('margin-left', '100%')
+			 $('#login').animate({marginLeft:'0%'}, 500)
+			 $('#atras').hide()
+			 $('#atras').css('right','19%')
+			 $('#titulo_seccion').html('Registro')
+			 at=0
+		  }else if(at==2){
+		  	 $('#atras').fadeOut()
+			 $('#alerta, #alerta2').fadeIn()
+			 $('#atras').css('right','19%')
+			 
+			 $('#votacion').css('z-index', '2')
+			 $('#galeria').css('z-index', '1')
+			 $('#retroalimentacion').css('z-index', '0')
+		     $('#log').css('z-index', '0')
+		     $('#login').css('z-index', '0')
+			 $('#votacion').show()
+		     $('#votacion').css('margin-left', '100%')
+		     $('#votacion').animate({marginLeft:'0%'}, 500)
+			 $('#galeria').delay(500).fadeOut(0)
+			 $('#titulo_seccion').html('Votación')
+			 at=0
+		  }else if(at==3){	
+		   	 $('#galeria').show()
+			 $('#galeria').css('z-index', '2')
+			 $('#retroalimentacion').css('z-index', '1')
+
+			 $('#galeria').show()
+		     $('#galeria').css('margin-left', '100%')
+		     $('#galeria').animate({marginLeft:'0%'}, 500)
+			 $('#titulo_seccion').html('Galeria')
+			 at=2
+		  }else if(at==4){
+			 $('#atras').fadeOut()
+			 $('#alerta, #alerta2').fadeIn()
+			 $('#atras').css('right','19%')
+			 	
+		   	 $('#monedero').show()
+			 $('#monedero').css('z-index', '2')
+			 $('#canje').css('z-index', '1')
+
+			 $('#monedero').show()
+		     $('#monedero').css('margin-left', '100%')
+		     $('#monedero').animate({marginLeft:'0%'}, 500)
+			 $('#titulo_seccion').html('Monedero Virtual')
+			 at=0
+		  }else if(at==5){
+		     $('#mapas_grande').css('z-index', '0')
+		  	 $('#mapas').css('z-index', '1')
+			 $('#ubicacion').css('z-index', '2')
+
+			 $('#atras').fadeOut()
+			 $('#alerta, #alerta2').fadeIn()
+			 $('#atras').css('right','19%')
+			 
+			 $('#ubicacion').show()
+			 $('#ubicacion').css('margin-left', '100%')
+			 $('#ubicacion').animate({marginLeft:'0%'}, 500)
+			 at=0
+		  }else if(at==6){
+		  	 $('#ubicacion').css('z-index', '0')
+		  	 $('#mapas_grande').css('z-index', '1')
+			 $('#mapas').css('z-index', '2')
+
+			 $('#mapas').show()
+			 $('#mapas').css('margin-left', '100%')
+			 $('#mapas').animate({marginLeft:'0%'}, 500)
+			 at=5
+		  }else if(at==7){
+		  	 $('#atras').fadeOut()
+			 $('#alerta, #alerta2').fadeIn()
+			 $('#atras').css('right','19%')
+			 	
+		   	 $('#localizador').show()
+			 $('#localizador').css('z-index', '2')
+			 $('#editar').css('z-index', '1')
+
+			 $('#localizador').show()
+		     $('#localizador').css('margin-left', '100%')
+		     $('#localizador').animate({marginLeft:'0%'}, 500)
+			 $('#titulo_seccion').html('Mi Cuenta')
+			 at=0
+		  }
+      })
+	  
+	  
+	  
+	  $('#lo_1').click(function(){
+		 $('#editar').show()
+		 $('#editar').css('z-index', '1')
+		 $('#localizador').css('z-index', '0')
+		 $('#editar').css('margin-left', '100%')
+		 $('#editar').animate({marginLeft:'0%'}, 500)
+		 $('#atras').fadeIn()
+		 $('#alerta, #alerta2').fadeOut()
+		 $('#atras').css('right','20%')
+		 $('#titulo_seccion').html('Editar Perfil')
+		 at=7
+	   });
+	  
+	  
+	  $('#bt_imagenes').click(function(){
+		  $('#gal_che').hide()
+		  $('#gal_im').show()
+		  $( "#gal_im" ).load( "gal_imagenes.php", function() {
+			  inicio()
+		  });
+		 
+		 
+		 $('#galeria').css('z-index', '2')
+		 $('#votacion').css('z-index', '1')
+		 $('#retroalimentacion').css('z-index', '0')
+		 $('#log').css('z-index', '0')
+		 $('#login').css('z-index', '0')
+		 
+		 $('#atras').fadeIn()
+		 $('#alerta, #alerta2').fadeOut()
+		 $('#atras').css('right','20%')
+		 
+		 $('#galeria').show()
+		 $('#galeria').css('margin-left', '100%')
+		 $('#galeria').animate({marginLeft:'0%'}, 500)
+		 at=2
+      })
+	  
+	  
+	  
+	  
+	  
+
+	  
+	  
+	  $('#bt_videos').click(function(){
+		  $('#gal_che').hide()
+		  $('#gal_im').show()
+		   $( "#gal_im" ).load( "gal_videos.php", function() {
+			  inicio()
+		  });
+		  
+		 $('#galeria').css('z-index', '2')
+		 $('#votacion').css('z-index', '1')
+		 $('#retroalimentacion').css('z-index', '0')
+		 $('#log').css('z-index', '0')
+		 $('#login').css('z-index', '0')
+		 
+		 $('#atras').fadeIn()
+		 $('#alerta, #alerta2').fadeOut()
+		 $('#atras').css('right','20%')
+		 
+		 $('#galeria').show()
+		 $('#galeria').css('margin-left', '100%')
+		 $('#galeria').animate({marginLeft:'0%'}, 500)
+		 at=2
+      })
+	  
+	  
+	  $('#bt_textos').click(function(){
+		  $('#gal_che').hide()
+		  $('#gal_im').show()
+		   $( "#gal_im" ).load( "gal_textos.php", function() {
+			  inicio()
+		  });
+		  
+		 $('#galeria').css('z-index', '2')
+		 $('#votacion').css('z-index', '1')
+		 $('#retroalimentacion').css('z-index', '0')
+		 $('#log').css('z-index', '0')
+		 $('#login').css('z-index', '0')
+		 
+		 $('#atras').fadeIn()
+		 $('#alerta, #alerta2').fadeOut()
+		 $('#atras').css('right','20%')
+		 
+		 $('#galeria').show()
+		 $('#galeria').css('margin-left', '100%')
+		 $('#galeria').animate({marginLeft:'0%'}, 500)
+		 at=2
+      })
+	  
+	  
+	  $('#bt_cuestionarios').click(function(){
+		  $('#gal_che').hide()
+		  $('#gal_im').show()
+		   $( "#gal_im" ).load( "gal_cuestionario2.php", function() {
+			  inicio()
+		  });
+		  
+		 $('#galeria').css('z-index', '2')
+		 $('#votacion').css('z-index', '1')
+		 $('#retroalimentacion').css('z-index', '0')
+		 $('#log').css('z-index', '0')
+		 $('#login').css('z-index', '0')
+		 
+		 $('#atras').fadeIn()
+		 $('#alerta, #alerta2').fadeOut()
+		 $('#atras').css('right','20%')
+		 
+		 $('#galeria').show()
+		 $('#galeria').css('margin-left', '100%')
+		 $('#galeria').animate({marginLeft:'0%'}, 500)
+		 at=2
+      })
+	  
+	  
+	  
+	  $('#bt_check').click(function(){
+		  $('#gal_che').show()
+		  $('#gal_im').hide()
+		   /*$( "#gal_im" ).load( "gal_check.php", function() {
+			  inicio()
+		  });*/
+		  inicio()
+		  
+		 $('#galeria').css('z-index', '2')
+		 $('#votacion').css('z-index', '1')
+		 $('#retroalimentacion').css('z-index', '0')
+		 $('#log').css('z-index', '0')
+		 $('#login').css('z-index', '0')
+		 
+		 $('#atras').fadeIn()
+		 $('#alerta, #alerta2').fadeOut()
+		 $('#atras').css('right','20%')
+		 
+		 $('#galeria').show()
+		 $('#galeria').css('margin-left', '100%')
+		 $('#galeria').animate({marginLeft:'0%'}, 500)
+		 at=2
+      })
+	  
+	  
+	 
+      $('.bt_imagenes').on( "vmousedown", function() {
+		  $(this).css('background', 'url(imagenes/bt_rosa.png) no-repeat')
+		  $(this).css('background-size', '100% 100%')
+	  });
+	  
+	  $('.bt_imagenes').on( "vmouseup", function() {
+		  $('.bt_imagenes').css('background', 'none')
+		 $('#titulo_seccion').html('Imagenes')
+		 reg="imagenes"
+	  });
+	  
+	  
+
+	  
+	  $('.bt_videos').on( "vmousedown", function() {
+		 $(this).css('background', 'url(imagenes/bt_rosa.png) no-repeat')
+		  $(this).css('background-size', '100% 100%')
+      })
+	   $('.bt_videos').on( "vmouseup", function() {
+		 $('.bt_videos').css('background', 'none')
+		 $('#titulo_seccion').html('Videos')
+		 reg="videos"
+      })
+	  
+	  
+	  $('.bt_textos').on( "vmousedown", function() {
+		 $(this).css('background', 'url(imagenes/bt_rosa.png) no-repeat')
+		  $(this).css('background-size', '100% 100%')
+      })
+	   $('.bt_textos').on( "vmouseup", function() {
+		 $('.bt_textos').css('background', 'none')
+		 $('#titulo_seccion').html('Textos')
+		 reg="textos"
+      })
+	  
+	  $('.bt_cuestionarios').on( "vmousedown", function() {
+		 $(this).css('background', 'url(imagenes/bt_rosa.png) no-repeat')
+		  $(this).css('background-size', '100% 100%')
+      })
+	   $('.bt_cuestionarios').on( "vmouseup", function() {
+		 $('.bt_cuestionarios').css('background', 'none')
+		 $('#titulo_seccion').html('Cuestionarios')
+		 reg="cuestionarios"
+      })
+	  
+	  $('.bt_check').on( "vmousedown", function() {
+		 $(this).css('background', 'url(imagenes/bt_rosa.png) no-repeat')
+		  $(this).css('background-size', '100% 100%')
+      })
+	   $('.bt_check').on( "vmouseup", function() {
+		 $('.bt_check').css('background', 'none')
+		 $('#titulo_seccion').html('Check')
+		 reg="check"
+      })
+	  
+	  
+	  $('#abrir_menu').click(function(){
+		 $('#abrir_menu').fadeOut()
+		 $('#cerrar_menu').fadeIn()
+		 $('#opciones').show()
+		 $('#opciones').css('margin-left', '100%')
+		 $('#opciones').animate({marginLeft:'0%'}, 500, 'linear')
+		 $('#todo').animate({marginLeft:'-100%'}, 500, 'linear')
+		 $('#titulo_seccion').html('Menu')
+      })
+	  
+	  $('#cerrar_menu').click(function(){
+		 $('#abrir_menu').fadeIn()
+		 $('#cerrar_menu').fadeOut()
+		 $('#opciones').animate({marginLeft:'100%'}, 500, 'linear')
+		 $('#todo').animate({marginLeft:'0%'}, 500, 'linear')
+		 $('#titulo_seccion').html('Votación')
+      })
+	  
+	  
+	  
+	  
+	  
+	  $('#can1, #can2, #can3, #can4').click(function(){
+		 $('#atras').fadeIn()
+		 $('#alerta, #alerta2').fadeOut()
+		 $('#atras').css('right','20%')
+		 
+		 $('#monedero').css('z-index', '1')
+		 $('#canje').css('z-index', '2')
+		  
+		 $('#canje').show()
+		 $('#canje').css('margin-left', '100%')
+		 $('#canje').animate({marginLeft:'0%'}, 500)
+		 $('#titulo_seccion').html('Canje')
+		 at=4
+      })
+	  
+	  
+	  $('#loguito, #lo_5').click(function(){
+		 $('#atras').hide()
+	     $('#atras').css('right','19%')
+		 $('#div2').fadeIn(800)
+		 $('#div1, #div3, #alerta, #alerta2, #abrir_menu').fadeOut(800)
+		 $('#votacion').css('z-index', '0')
+		 $('#galeria').css('z-index', '0')
+		 $('#log').css('z-index', '0')
+		 $('#login').css('z-index', '1')
+		 $('#ubicacion').css('z-index', '0')
+		 $('#retroalimentacion').css('z-index', '0')
+		 $('#monedero').css('z-index', '0')
+		 $('#canje').css('z-index', '0')
+		 $('#mapas').css('z-index', '0')
+		 $('#mapas_grande').css('z-index', '0')
+		 $('#localizador').css('z-index', '0')
+		 $('#editar').css('z-index', '0')
+		 $('#codigo').css('z-index', '0')
+		  
+		// $('#abrir_menu').fadeIn()
+		 $('#cerrar_menu').fadeOut()
+		 $('#opciones').animate({marginLeft:'100%'}, 500, 'linear')
+		 $('#todo').animate({marginLeft:'0%'}, 500, 'linear')
+		 $('#login').show()
+		 $('#votacion').hide()
+		 $('#galeria').hide()
+		 $('#ubicacion').hide()
+		 $('#retroalimentacion').hide()
+		 $('#monedero').hide()
+		 $('#canje').hide()
+		 $('#mapas').hide()
+		 $('#mapas_grande').hide()
+		 $('#localizador').hide()
+		 $('#editar').hide()
+		 $('#codigo').hide()
+		 $('#titulo_seccion').html('Registro')
+      })
+	  
+	  
+	  
+	  
+	  
+	  
+	  $('#bt_votacion').click(function(){
+		  
+		 $('#votacion').css('z-index', '1')
+		 $('#galeria').css('z-index', '0')
+		 $('#log').css('z-index', '0')
+		 $('#login').css('z-index', '0')
+		 $('#ubicacion').css('z-index', '0')
+		 $('#retroalimentacion').css('z-index', '0')
+		 $('#monedero').css('z-index', '0')
+		 $('#canje').css('z-index', '0')
+		 $('#mapas').css('z-index', '0')
+		 $('#mapas_grande').css('z-index', '0')
+		 $('#localizador').css('z-index', '0')
+		 $('#codigo').css('z-index', '0')
+		  
+		 $('#abrir_menu').fadeIn()
+		 $('#cerrar_menu').fadeOut()
+		 $('#opciones').animate({marginLeft:'100%'}, 500, 'linear')
+		 $('#todo').animate({marginLeft:'0%'}, 500, 'linear')
+		 $('#login').hide()
+		 $('#votacion').show()
+		 $('#galeria').hide()
+		 $('#ubicacion').hide()
+		 $('#retroalimentacion').hide()
+		 $('#monedero').hide()
+		 $('#canje').hide()
+		 $('#mapas').hide()
+		 $('#mapas_grande').hide()
+		 $('#localizador').hide()
+		 $('#codigo').hide()
+		 $('#titulo_seccion').html('Votación')
+      })
+	  
+	  $('#bt_monedero').click(function(){
+		  
+		 $('#votacion').css('z-index', '0')
+		 $('#galeria').css('z-index', '0')
+		 $('#log').css('z-index', '0')
+		 $('#login').css('z-index', '0')
+		 $('#ubicacion').css('z-index', '0')
+		 $('#retroalimentacion').css('z-index', '0')
+		 $('#monedero').css('z-index', '1')
+		 $('#canje').css('z-index', '0')
+		 $('#mapas').css('z-index', '0')
+		 $('#mapas_grande').css('z-index', '0')
+		 $('#localizador').css('z-index', '0')
+		 $('#codigo').css('z-index', '0')
+		  
+		 $('#abrir_menu').fadeIn()
+		 $('#cerrar_menu').fadeOut()
+		 $('#opciones').animate({marginLeft:'100%'}, 500, 'linear')
+		 $('#todo').animate({marginLeft:'0%'}, 500, 'linear')
+		 $('#login').hide()
+		 $('#votacion').hide()
+		 $('#galeria').hide()
+		 $('#ubicacion').hide()
+		 $('#retroalimentacion').hide()
+		 $('#monedero').show()
+		 $('#canje').hide()
+		 $('#mapas').hide()
+		 $('#mapas_grande').hide()
+		 $('#localizador').hide()
+		 $('#codigo').hide()
+		 $('#titulo_seccion').html('Monedero Virtual')
+      })
+	  
+	  $('#bt_mapas').click(function(){
+		  
+		 $('#votacion').css('z-index', '0')
+		 $('#galeria').css('z-index', '0')
+		 $('#log').css('z-index', '0')
+		 $('#login').css('z-index', '0')
+		 $('#ubicacion').css('z-index', '0')
+		 $('#retroalimentacion').css('z-index', '0')
+		 $('#monedero').css('z-index', '0')
+		 $('#canje').css('z-index', '0')
+		 $('#mapas').css('z-index', '1')
+		 $('#mapas_grande').css('z-index', '0')
+		 $('#localizador').css('z-index', '0')
+		 $('#codigo').css('z-index', '0')
+		  
+		 $('#abrir_menu').fadeIn()
+		 $('#cerrar_menu').fadeOut()
+		 $('#opciones').animate({marginLeft:'100%'}, 500, 'linear')
+		 $('#todo').animate({marginLeft:'0%'}, 500, 'linear')
+		 $('#login').hide()
+		 $('#votacion').hide()
+		 $('#galeria').hide()
+		 $('#ubicacion').show()
+		 $('#retroalimentacion').hide()
+		 $('#monedero').hide()
+		 $('#canje').hide()
+		 $('#mapas').hide()
+		 $('#mapas_grande').hide()
+		 $('#localizador').hide()
+		 $('#codigo').hide()
+		 $('#titulo_seccion').html('Mapas / Centros C...')
+		 initMap()
+      })
+	  
+	  function mapa_centro(){
+	  	 $('#mapas_grande').css('z-index', '0')
+		 $('#mapas').css('z-index', '2')
+		 $('#ubicacion').css('z-index', '1')
+		 //$('#retroalimentacion').css('z-index', '0')
+		 //$('#log').css('z-index', '0')
+		 //$('#login').css('z-index', '0')
+		 
+		 $('#atras').fadeIn()
+		 $('#alerta, #alerta2').fadeOut()
+		 $('#atras').css('right','20%')
+		 
+		 $('#mapas').show()
+		 $('#mapas').css('margin-left', '100%')
+		 $('#mapas').animate({marginLeft:'0%'}, 500)
+		 at=5
+	  }
+	  
+	  
+	  $('#centro').click(function(){
+	  	 $('#mapas_grande').css('z-index', '2')
+		 $('#mapas').css('z-index', '1')
+		 $('#ubicacion').css('z-index', '0')
+		 //$('#retroalimentacion').css('z-index', '0')
+		 //$('#log').css('z-index', '0')
+		 //$('#login').css('z-index', '0')
+		 
+		 $('#atras').fadeIn()
+		 $('#alerta, #alerta2').fadeOut()
+		 $('#atras').css('right','20%')
+		 
+		 $('#mapas_grande').show()
+		 $('#mapas_grande').css('margin-left', '100%')
+		 $('#mapas_grande').animate({marginLeft:'0%'}, 500)
+		 at=6
+		 
+		 		var sobrepasa = ($('#mapota').width()-$('#mapas_grande').width())*2
+				$('#contenido').css('width',$('#mapas_grande').width()+sobrepasa);
+				$('#contenido').css('margin-left',$('#contenido').width()/-2);
+				$('#mapota').css('left',sobrepasa/4);
+				
+				var sobrepasaAlto = ($('#mapota').height()-$('#mapas_grande').height())*2
+				
+				
+				$('#contenido').css('height',$('#mapas_grande').height()+sobrepasaAlto);
+				$('#contenido').css('margin-top',$('#contenido').height()/-2);
+				$('#mapota').css('top',sobrepasaAlto/4);
+				
+				$(function() {
+						   $( "#mapota").draggable({containment: '#contenido', revert: "valid",
+							start: function() {
+								$(this).css('z-index','1')
+							},stop: function() {
+								$(this).css('z-index','2')
+							}
+						  });
+				});
+	  })
+	  
+	  
+	  
+	  $('#bt_cuenta').click(function(){
+		  
+		  $('#votacion').css('z-index', '0')
+		 $('#galeria').css('z-index', '0')
+		 $('#log').css('z-index', '0')
+		 $('#login').css('z-index', '0')
+		 $('#ubicacion').css('z-index', '0')
+		 $('#retroalimentacion').css('z-index', '0')
+		 $('#monedero').css('z-index', '0')
+		 $('#canje').css('z-index', '0')
+		 $('#mapas').css('z-index', '0')
+		 $('#mapas_grande').css('z-index', '0')
+		 $('#localizador').css('z-index', '1')
+		 $('#codigo').css('z-index', '0')
+		  
+		 $('#abrir_menu').fadeIn()
+		 $('#cerrar_menu').fadeOut()
+		 $('#opciones').animate({marginLeft:'100%'}, 500, 'linear')
+		 $('#todo').animate({marginLeft:'0%'}, 500, 'linear')
+		 $('#login').hide()
+		 $('#votacion').hide()
+		 $('#galeria').hide()
+		 $('#ubicacion').hide()
+		 $('#retroalimentacion').hide()
+		 $('#monedero').hide()
+
+		 $('#canje').hide()
+		 $('#mapas').hide()
+		 $('#mapas_grande').hide()
+		 $('#localizador').show()
+		 $('#codigo').hide()
+		 $('#titulo_seccion').html('Mi Cuenta')
+      })
+	  
+	  
+	 
+	  
+	  
+	  
+	 
+	  
+	  
+	  $('#bt_codigo').click(function(){
+		 $('#votacion').css('z-index', '0')
+		 $('#galeria').css('z-index', '0')
+		 $('#log').css('z-index', '0')
+		 $('#login').css('z-index', '0')
+		 $('#ubicacion').css('z-index', '0')
+		 $('#retroalimentacion').css('z-index', '0')
+		 $('#monedero').css('z-index', '0')
+		 $('#canje').css('z-index', '0')
+		 $('#mapas').css('z-index', '0')
+		 $('#mapas_grande').css('z-index', '0')
+		 $('#localizador').css('z-index', '0')
+		 $('#codigo').css('z-index', '1')
+		  
+		 $('#abrir_menu').fadeIn()
+		 $('#cerrar_menu').fadeOut()
+		 $('#opciones').animate({marginLeft:'100%'}, 500, 'linear')
+		 $('#todo').animate({marginLeft:'0%'}, 500, 'linear')
+		 $('#login').hide()
+		 $('#votacion').hide()
+		 $('#galeria').hide()
+		 $('#ubicacion').hide()
+		 $('#retroalimentacion').hide()
+		 $('#monedero').hide()
+		 $('#canje').hide()
+		 $('#mapas').hide()
+		 $('#mapas_grande').hide()
+		 $('#localizador').hide()
+		 $('#codigo').show()
+		 $('#titulo_seccion').html('Código de Cliente')
+		 
+		 inicio()
+      })
+	  
+	  
+	  
+      </script>
+    
+      <script type="text/javascript" src="cordova.js"></script> 
+      <script type="text/javascript" src="js/index.js"></script>
+
+       
+      <script>
+      app.initialize();
+      </script> 
+</body>
+</html>

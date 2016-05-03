@@ -1,0 +1,312 @@
+@charset "utf-8";
+@font-face {
+	font-family: 'ArialN';
+	src: url('../fonts/ArialN.eot?') format('eot'), url('../fonts/ArialN.otf') format('opentype'), url('../fonts/ArialN.woff') format('woff'), url('../fonts/ArialN.ttf') format('truetype'), url('../fonts/ArialN.svg#ArialN') format('svg');
+}
+@font-face {
+	font-family: 'ArialNB';
+	src: url('../fonts/ArialNB.eot?') format('eot'), url('../fonts/ArialNB.otf') format('opentype'), url('../fonts/ArialNB.woff') format('woff'), url('../fonts/ArialNB.ttf') format('truetype'), url('../fonts/ArialNB.svg#ArialNB') format('svg');
+}
+@font-face {
+	font-family: 'ArialNBI';
+	src: url('../fonts/ArialNBI.eot?') format('eot'), url('../fonts/ArialNBI.otf') format('opentype'), url('../fonts/ArialNBI.woff') format('woff'), url('../fonts/ArialNBI.ttf') format('truetype'), url('../fonts/ArialNBI.svg#ArialNBI') format('svg');
+}
+@font-face {
+	font-family: 'ArialNI';
+	src: url('../fonts/ArialNI.eot?') format('eot'), url('../fonts/ArialNI.otf') format('opentype'), url('../fonts/ArialNI.woff') format('woff'), url('../fonts/ArialNI.ttf') format('truetype'), url('../fonts/ArialNI.svg#ArialNI') format('svg');
+}
+@font-face {
+	font-family: 'Consolas';
+	src: url('../fonts/Consolas.eot?') format('eot'), url('../fonts/Consolas.otf') format('opentype'), url('../fonts/Consolas.woff') format('woff'), url('../fonts/Consolas.ttf') format('truetype'), url('../fonts/Consolas.svg#Consolas') format('svg');
+}
+@font-face {
+	font-family: 'Sessions';
+	src: url('../fonts/Sessions.eot?') format('eot'), url('../fonts/Sessions.otf') format('opentype'), url('../fonts/Sessions.woff') format('woff'), url('../fonts/Sessions.ttf') format('truetype'), url('../fonts/Sessions.svg#Sessions') format('svg');
+}
+body {
+	margin: 0px;
+	padding: 0px;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+#contenedor {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	overflow: hidden
+}
+.t1 {
+	font-family: Consolas;
+	color: #fff;
+	position: absolute;
+}
+.t2 {
+	font-family: Sessions;
+	color: #fff;
+	position: absolute;
+}
+.campos {
+	font-family: ArialN;
+	position: absolute;
+	color: #fff;
+	border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	border: 2px solid #fff;
+	cursor:pointer
+}
+
+.campos2{
+	font-family: ArialN;
+	position: absolute;
+	color: #fff;
+	cursor:pointer
+}
+
+.gris {
+	font-family: ArialN;
+	position: absolute;
+	color: #fff;
+}
+.botones {
+	font-family: ArialN;
+	position: absolute;
+	color: #fff;
+	border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	border: 2px solid #C7004B;
+}
+.botones2 {
+	font-family: ArialN;
+	position: absolute;
+	color: #fff;
+	border: 2px solid #C7004B;
+}
+#menu {
+	width: 100%;
+	height: 9%;
+	position: fixed;
+	background-color: #fff;
+	font-family: Sessions;
+	color: #808285;
+}
+#login {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background:url(../imagenes/azul.png) no-repeat;
+	background-size:100% 100%;
+	overflow:scroll;
+	overflow-x:hidden
+}
+#log {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background:url(../imagenes/azul.png) no-repeat;
+	background-size:100% 100%;
+}
+#votacion {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background:url(../imagenes/morado.png) no-repeat;
+	background-size:100% 100%;
+}
+#galeria {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-color: #fff;
+}
+#ubicacion {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background:url(../imagenes/morado.png) no-repeat;
+	background-size:100% 100%;
+}
+
+#retroalimentacion {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-color: #4BD8DC;
+}
+#monedero {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background:url(../imagenes/rosa.png) no-repeat;
+	background-size:100% 100%;
+}
+#canje {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background:url(../imagenes/morado.png) no-repeat;
+	background-size:100% 100%;
+}
+#mapas {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background:url(../imagenes/verde.png) no-repeat;
+	background-size:100% 100%;
+}
+#mapas_grande{
+	width: 100%;
+	height: 91%;
+	position: absolute;
+	background:url(../imagenes/verde.png) no-repeat;
+	background-size:100% 100%;
+	top:9%
+}
+#localizador{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background:url(../imagenes/azul.png) no-repeat;
+	background-size:100% 100%;
+}
+
+#editar{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background:url(../imagenes/azul.png) no-repeat;
+	background-size:100% 100%;
+}
+
+#codigo{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background:url(../imagenes/amarillo.png) no-repeat;
+	background-size:100% 100%;
+}
+
+
+
+
+#todo{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+
+#opciones{
+	width: 100%;
+	height: 91%;
+	position: absolute;
+}
+.menu{
+	width: 100%;
+	height: 20%;
+	position:relative;
+	float:left
+}
+
+.menu_titulo{
+	font-family:Sessions;
+	color:#fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+p {
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	-ms-transform: translate(0%, -50%);
+	-webkit-transform: translate(0%, -50%);
+	transform: translate(0%, -50%);
+}
+
+.centro_v {
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	-ms-transform: translate(0%, -50%);
+	-webkit-transform: translate(0%, -50%);
+	transform: translate(0%, -50%);
+}
+
+.campo_texto {
+	position: absolute;
+	height: 100%;
+	width: 90%;
+	border: none;
+	background: none;
+	right: 0px;
+	font-family:ArialN;
+	color:#FFFFFF;
+	padding-left:5%;
+	padding-right:5%
+}
+
+
+#map {
+	border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	border: 2px solid #fff;
+}
+
+#centro {
+	border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	border: 2px solid #fff;
+}
+
+
+#buscar {
+	border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	border: 2px solid #fff;
+}
+
+#ale {
+	border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	border: 2px solid #fff;
+	background-color:#FFFFFF
+}
+
+#err{
+	top: 50%;
+	-ms-transform: translate(0%, -50%);
+	-webkit-transform: translate(0%, -50%);
+	transform: translate(0%, -50%);
+	color:#FFFFFF;
+	font-family:Sessions;
+}
+
+.cod{
+	font-family: Consolas;
+	color:#fbb040
+}
+
+#mapota{
+	width:2220px;
+	height:900px;
+	background:url(../imagenes/mapota.png) no-repeat;
+	background-size:100% 100%
+}
