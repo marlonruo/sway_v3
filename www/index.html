@@ -220,7 +220,7 @@ function getCurrentUserInfo() {
    	  <div id="login" style="display:block;">
       	<div style="position:absolute; width:100%; height:155%">
        	<div class="t1" style="width:90%; left:5%; text-align:center; top:10%">Crear una cuenta para comenzar:</div>
-            
+<form name="forma_login" id="forma_login" method="post" action="http://marlonruo.com/swayapp/php/enviar_usuario.php">            
         <div class="campos" style="left:8%; width:84%; height:5%; top:14%">
         	<p id="t_nombre" class="crear" style="margin-left:5%">Nombre:</p>
             <input id="c_nombre" name="c_nombre" class="campo_texto" type="text" onFocus="borrar1()" onBlur="revisar1()">
@@ -233,64 +233,93 @@ function getCurrentUserInfo() {
         <div id="c_edad" class="campos" style="left:8%; width:40%; height:5%; top:29%; background:url(imagenes/abajo.png) no-repeat; background-size:auto 38%; background-position:90%">
         	<p id="t_edad" class="crear" style="margin-left:5%">Edad</p>
             
+            <input id="ca_edad" name="ca_edad" class="campo_texto" type="text" value="" style="display:none">
+            
             	<div id="op_edad" style="position:absolute; background-color:#fff; width:100%; height:240%; top:100%; z-index:1000; overflow:scroll; overflow-x:hidden; display:none">
-       	    		<div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left;" onClick="$('#t_edad').html('18'); borrar1_bac()"><p>18</p></div>
-                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('19'); borrar1_bac()"><p>19</p></div>
-                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('20'); borrar1_bac()"><p>20</p></div>
-                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('21'); borrar1_bac()"><p>21</p></div>
-                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('22'); borrar1_bac()"><p>22</p></div>
-                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('23'); borrar1_bac()"><p>23</p></div>
-                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('24'); borrar1_bac()"><p>24</p></div>
-                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('25'); borrar1_bac()"><p>25</p></div>
-                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('26'); borrar1_bac()"><p>26</p></div>
-                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('27'); borrar1_bac()"><p>27</p></div>
-                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('28'); borrar1_bac()"><p>28</p></div>
-                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('29'); borrar1_bac()"><p>29</p></div>
-                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('30'); borrar1_bac()"><p>30</p></div>
-                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('31'); borrar1_bac()"><p>31</p></div>
-                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('32'); borrar1_bac()"><p>32</p></div>
-                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('33'); borrar1_bac()"><p>33</p></div>
-                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('34'); borrar1_bac()"><p>34</p></div>
-                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('35'); borrar1_bac()"><p>35</p></div>
-                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('36'); borrar1_bac()"><p>36</p></div>
-                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('37'); borrar1_bac()"><p>37</p></div>
-                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('38'); borrar1_bac()"><p>38</p></div>
-                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('39'); borrar1_bac()"><p>39</p></div>
-                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('40'); borrar1_bac()"><p>40</p></div>
-                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('41'); borrar1_bac()"><p>41</p></div>
-                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('42'); borrar1_bac()"><p>42</p></div>
-                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('43'); borrar1_bac()"><p>43</p></div>
-                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('44'); borrar1_bac()"><p>44</p></div>
-                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('45'); borrar1_bac()"><p>45</p></div>
-                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('46'); borrar1_bac()"><p>46</p></div>
-                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('47'); borrar1_bac()"><p>47</p></div>
-                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('48'); borrar1_bac()"><p>48</p></div>
-                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('49'); borrar1_bac()"><p>49</p></div>
-                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('50'); borrar1_bac()"><p>50</p></div>
-                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('51'); borrar1_bac()"><p>51</p></div>
-                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('52'); borrar1_bac()"><p>52</p></div>
-                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('53'); borrar1_bac()"><p>53</p></div>
-                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('54'); borrar1_bac()"><p>54</p></div>
-                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('55'); borrar1_bac()"><p>55</p></div>
-                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('56'); borrar1_bac()"><p>56</p></div>
-                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('57'); borrar1_bac()"><p>57</p></div>
-                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('58'); borrar1_bac()"><p>58</p></div>
-                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('59'); borrar1_bac()"><p>59</p></div>
-                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('60'); borrar1_bac()"><p>60</p></div>
+       	    		<div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left;" onClick="$('#t_edad').html('18'); document.getElementById('ca_edad').value='18'; borrar1_bac()"><p>18</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('19'); document.getElementById('ca_edad').value='19'; borrar1_bac()"><p>19</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('20'); document.getElementById('ca_edad').value='20'; borrar1_bac()"><p>20</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('21'); document.getElementById('ca_edad').value='21'; borrar1_bac()"><p>21</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('22'); document.getElementById('ca_edad').value='22'; borrar1_bac()"><p>22</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('23'); document.getElementById('ca_edad').value='23'; borrar1_bac()"><p>23</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('24'); document.getElementById('ca_edad').value='24'; borrar1_bac()"><p>24</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('25'); document.getElementById('ca_edad').value='25'; borrar1_bac()"><p>25</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('26'); document.getElementById('ca_edad').value='26'; borrar1_bac()"><p>26</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('27'); document.getElementById('ca_edad').value='27'; borrar1_bac()"><p>27</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('28'); document.getElementById('ca_edad').value='28'; borrar1_bac()"><p>28</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('29'); document.getElementById('ca_edad').value='29'; borrar1_bac()"><p>29</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('30'); document.getElementById('ca_edad').value='30'; borrar1_bac()"><p>30</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('31'); document.getElementById('ca_edad').value='31'; borrar1_bac()"><p>31</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('32'); document.getElementById('ca_edad').value='32'; borrar1_bac()"><p>32</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('33'); document.getElementById('ca_edad').value='33'; borrar1_bac()"><p>33</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('34'); document.getElementById('ca_edad').value='34'; borrar1_bac()"><p>34</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('35'); document.getElementById('ca_edad').value='35'; borrar1_bac()"><p>35</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('36'); document.getElementById('ca_edad').value='36'; borrar1_bac()"><p>36</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('37'); document.getElementById('ca_edad').value='37'; borrar1_bac()"><p>37</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('38'); document.getElementById('ca_edad').value='38'; borrar1_bac()"><p>38</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('39'); document.getElementById('ca_edad').value='39'; borrar1_bac()"><p>39</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('40'); document.getElementById('ca_edad').value='40'; borrar1_bac()"><p>40</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('41'); document.getElementById('ca_edad').value='41'; borrar1_bac()"><p>41</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('42'); document.getElementById('ca_edad').value='42'; borrar1_bac()"><p>42</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('43'); document.getElementById('ca_edad').value='43'; borrar1_bac()"><p>43</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('44'); document.getElementById('ca_edad').value='44'; borrar1_bac()"><p>44</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('45'); document.getElementById('ca_edad').value='45'; borrar1_bac()"><p>45</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('46'); document.getElementById('ca_edad').value='46'; borrar1_bac()"><p>46</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('47'); document.getElementById('ca_edad').value='47'; borrar1_bac()"><p>47</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('48'); document.getElementById('ca_edad').value='48'; borrar1_bac()"><p>48</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('49'); document.getElementById('ca_edad').value='49'; borrar1_bac()"><p>49</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('50'); document.getElementById('ca_edad').value='50'; borrar1_bac()"><p>50</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('51'); document.getElementById('ca_edad').value='51'; borrar1_bac()"><p>51</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('52'); document.getElementById('ca_edad').value='52'; borrar1_bac()"><p>52</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('53'); document.getElementById('ca_edad').value='53'; borrar1_bac()"><p>53</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('54'); document.getElementById('ca_edad').value='54'; borrar1_bac()"><p>54</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('55'); document.getElementById('ca_edad').value='55'; borrar1_bac()"><p>55</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('56'); document.getElementById('ca_edad').value='56'; borrar1_bac()"><p>56</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('57'); document.getElementById('ca_edad').value='57'; borrar1_bac()"><p>57</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('58'); document.getElementById('ca_edad').value='58'; borrar1_bac()"><p>58</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('59'); document.getElementById('ca_edad').value='59'; borrar1_bac()"><p>59</p></div>
+                    <div class="t3" style="height:25%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_edad').html('60'); document.getElementById('ca_edad').value='60'; borrar1_bac()"><p>60</p></div>
                 </div>
         </div>
         
         <div id="c_genero" class="campos" style="left:52%; width:40%; height:5%; top:29%; background:url(imagenes/abajo.png) no-repeat; background-size:auto 38%; background-position:90%">
         	<p id="t_genero" class="crear" style="margin-left:5%">Género</p>
+            <input id="ca_genero" name="ca_genero" class="campo_texto" type="text" value="" style="display:none">
             
                  <div id="op_genero" style="position:absolute; background-color:#fff; width:100%; height:120%; top:100%; z-index:1000; display:none">
-       	    		<div class="t3" style="height:50%; width:85%; left:5%; color:#C7004B; position:relative; float:left;" onClick="$('#t_genero').html('Hombre'); borrar1_bac()"><p>Hombre</p></div>
-                    <div class="t3" style="height:50%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_genero').html('Mujer'); borrar1_bac()"><p>Mujer</p></div>
+       	    		<div class="t3" style="height:50%; width:85%; left:5%; color:#C7004B; position:relative; float:left;" onClick="$('#t_genero').html('Hombre'); document.getElementById('ca_genero').value='Hombre'; borrar1_bac()"><p>Hombre</p></div>
+                    <div class="t3" style="height:50%; width:85%; left:5%; color:#C7004B; position:relative; float:left" onClick="$('#t_genero').html('Mujer'); document.getElementById('ca_genero').value='Mujer'; borrar1_bac()"><p>Mujer</p></div>
                 </div>
         </div>
         
+        
+        <div class="campos" style="left:8%; width:84%; height:5%; top:36.5%">
+        	<p id="t_contrasena" class="crear" style="margin-left:5%">Contraseña:</p>
+            <input id="c_contrasena" name="c_contrasena" class="campo_texto" type="text" onFocus="borrar5()" onBlur="revisar5()">
+        </div>
+        
+        <div class="campos" style="left:8%; width:84%; height:5%; top:44%">
+        	<p id="t_codigo" class="crear" style="margin-left:5%">Código:</p>
+            <input id="c_codigo" name="c_codigo" class="campo_texto" type="text" onFocus="borrar6()" onBlur="revisar6()">
+        </div>
+        
+        <div id="terminos" class="campos" style="left:80%; width:12%; height:5%; top:51.5%; background-position:center; cursor:pointer">
+        </div>
+        
+        <div id="aviso" class="campos" style="left:8%; width:65%; height:5.5%; top:51.5%; border:none; text-align:right">
+        	<p style="width:100%;">Acepto el <span style="border-bottom:1px solid #FFFFFF">Aviso de Privacidad:</span></p>
+        </div>
+
+ 
+        <input id="bt_signup" type="submit" class="botones bot" style="left:8%; width:85%; height:6%; top:60%; cursor:pointer; background:url(imagenes/bt_rosa.png) no-repeat; background-size:100% 100%; border:2px solid #FFFFFF" value="Sign Up">
+          
+        </form>
+        
+        
+        
         <script>
-        	$('#c_genero').mousedown(function(){
+		
+			$('#c_genero').mousedown(function(){
 				$('#ale').fadeOut()
 				$('#c_genero').css('background-color','#C7004B')
 				$('#c_edad').css('background-color','rgba(255,255,255,0)')
@@ -312,34 +341,7 @@ function getCurrentUserInfo() {
 				$('#op_edad').hide()
 				$('#op_genero').hide()
 			}
-        </script>
-        
-        
-        
-        
-        
-        <div class="campos" style="left:8%; width:84%; height:5%; top:36.5%">
-        	<p id="t_contrasena" class="crear" style="margin-left:5%">Contraseña:</p>
-            <input id="c_contrasena" name="c_contrasena" class="campo_texto" type="text" onFocus="borrar5()" onBlur="revisar5()">
-        </div>
-        
-        <div class="campos" style="left:8%; width:84%; height:5%; top:44%">
-        	<p id="t_codigo" class="crear" style="margin-left:5%">Código:</p>
-            <input id="c_codigo" name="c_codigo" class="campo_texto" type="text" onFocus="borrar6()" onBlur="revisar6()">
-        </div>
-        
-        <div id="terminos" class="campos" style="left:80%; width:12%; height:5%; top:51.5%; background-position:center; cursor:pointer">
-        </div>
-        
-        <div id="aviso" class="campos" style="left:8%; width:65%; height:5.5%; top:51.5%; border:none; text-align:right">
-        	<p style="width:100%;">Acepto el <span style="border-bottom:1px solid #FFFFFF">Aviso de Privacidad:</span></p>
-        </div>
-<!--        <div class="campos" style="left:8%; width:84%; height:8%; top:42%">
-        	<p id="t_contrasena" class="crear" style="margin-left:5%">Contraseña:</p>
-            <input id="c_contrasena" class="campo_texto" type="text" onFocus="borrar3()" onBlur="revisar3()">
-        </div>-->
-        
-        <script>
+			
 			var tte=0
 			$('#terminos').click(function(){
 				$('#ale').fadeOut()
@@ -410,11 +412,86 @@ function getCurrentUserInfo() {
 				}
 			}
 			
+			
+	$('#forma_login').submit(function() {
+		var email = $("input#c_email").val();
+		var nombre = $("input#c_nombre").val();
+		var edad = document.getElementById('t_edad').innerHTML
+		var genero = document.getElementById('t_genero').innerHTML
+		var contrasena = $("input#c_contrasena").val();
+		
+		var filtro = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;	
+		
+		
+		if (!filtro.test(email)) {
+			$('#ale').fadeIn()
+			$('#err').html('Error')
+			$('#errores').html('Email incorrecto')
+			return false;
+		}else if(nombre=="Nombre:" || nombre==""){
+			$('#ale').fadeIn()
+			$('#err').html('Error')
+			$('#errores').html('Debes ingresar tu nombre')
+			return false;
+		}else if(edad=="Edad" || edad==""){
+			$('#ale').fadeIn()
+			$('#err').html('Error')
+			$('#errores').html('Debes ingresar tu edad')
+			return false;
+		}else if(genero=="Género" || genero==""){
+			$('#ale').fadeIn()
+			$('#err').html('Error')
+			$('#errores').html('Debes ingresar tu género')
+			return false;
+		}else if(contrasena=="Contraseña:" || contrasena=="" || contrasena.length<8){
+			$('#ale').fadeIn()
+			$('#err').html('Error')
+			$('#errores').html('La contraseña debe tener al menos 8 caracteres')
+			return false;
+		}else if(tte==0){
+			$('#ale').fadeIn()
+			$('#err').html('Error')
+			$('#errores').html('Debes aceptar los terminos y condiciones')
+			return false;
+		}else{
+		  	 
+			 $('#ale').fadeIn()
+			 $('#err').html('Espera')
+			 $('#errores').html('Espera un momento')
+		}
+		
+		
+		
+									
+        $.ajax({
+            type: 'POST',
+            url: $(this).attr('action'),
+            data: $(this).serialize(),
+            success: function(data) {
+					if(data=='si'){
+					 $('#ale').fadeOut()
+					 //localStorage.setItem("nombre", $("input#c_nombre").val());
+					 $('#votacion').css('z-index', '1')
+					 $('#log').css('z-index', '0')
+					 $('#login').css('z-index', '0')
+					  
+					 $('#votacion').show()
+					 $('#votacion').css('margin-left', '100%')
+					 $('#votacion').animate({marginLeft:'0%'}, 500)
+					 $('#div1, #div3, #alerta, #alerta2, #abrir_menu').fadeIn(800)
+					 $('#titulo_seccion').html('Votacion')
+					}else{
+					 $('#ale').fadeIn()
+					 $('#err').html('Error')
+					 $('#errores').html('Este email ya ha sido registrado')
+					}
+            }
+        })
+		return false;
+   	 	});
+	
         </script>
-            
-        <div id="bt_signup" class="botones" style="left:8%; width:84%; height:6%; top:60%; cursor:pointer; background:url(imagenes/bt_rosa.png) no-repeat; background-size:100% 100%; border:2px solid #FFFFFF">
-       	  <p class="bot" style="width:100%; text-align:center">Sign Up</p>
-        </div>
+        
             
         <div class="t1" style="width:100%; text-align:center; top:69.5%">- o también puedes -</div>
             
@@ -438,7 +515,7 @@ function getCurrentUserInfo() {
             
        		<div id="ale" style="position:absolute; width:84%; left:8%; top:60%; height:12%; display:none">
             	<div style="position:absolute; background-color:#C7004B; width:100%; height:38%">
-       	    		<img id="cierra" src="imagenes/cierra.png" style="position:absolute; height:70%; top:15%; right:2%"/> 
+       	    		<img class="cierra" src="imagenes/cierra.png" style="position:absolute; height:70%; top:15%; right:2%"/> 
                 	<img src="imagenes/i.png" style="position:absolute; height:70%; top:15%; left:2%"/> 
                 	<div id="err" style="position:absolute; left:12%;">Error:</div>
                 </div>
@@ -458,23 +535,137 @@ function getCurrentUserInfo() {
       <div id="log" style="display:none">
        	<div class="t1" style="width:100%; text-align:center; top:15%">Log in con tu cuenta</div>
             
+        <form name="forma_login2" id="forma_login2" method="post" action="http://marlonruo.com/swayapp/php/enviar_login.php">    
         <div class="campos" style="left:8%; width:84%; height:8%; top:21%">
-        	<p class="crear" style="margin-left:5%">Email:</p>
-            <input class="campo_texto" type="text">
+        	<p id="t_email2" class="crear" style="margin-left:5%">Email:</p>
+            <input id="c_email2" name="c_email2" class="campo_texto" type="text" onFocus="borrar1a()" onBlur="revisar1a()">
         </div>
         <div class="campos" style="left:8%; width:84%; height:8%; top:33%">
-        	<p class="crear" style="margin-left:5%">Contraseña:</p>
-            <input class="campo_texto" type="text">
+        	<p id="t_contrasena2" class="crear" style="margin-left:5%">Contraseña:</p>
+            <input id="c_contrasena2" name="c_contrasena2" class="campo_texto" type="password" onFocus="borrar2a()" onBlur="revisar2a()">
         </div>
         
             
-        <div id="bt_signup2" class="botones" style="left:8%; width:84%; height:8%; top:45%; ; background:url(imagenes/bt_rosa.png) no-repeat; background-size:100% 100%; border:none; cursor:pointer">
-       	  <p class="bot" style="width:100%; text-align:center">Login</p>
-        </div>
+       
         
-        <div class="botones" style="left:8%; width:84%; height:8%; top:57%; background-color:#33508C; background:url(imagenes/bt_face.png) no-repeat; background-size:100% 100%; border:none; cursor:pointer">
+        <input id="bt_signup2" type="submit" class="botones bot" style="left:8%; width:85%; height:8%; top:45%; cursor:pointer; background:url(imagenes/bt_rosa.png) no-repeat; background-size:100% 100%; border:2px solid #FFFFFF" value="Login">
+        
+        
+        	<div id="ale2" style="position:absolute; width:84%; left:8%; top:45%; height:18%; display:none; z-index:100">
+            	<div style="position:absolute; background-color:#C7004B; width:100%; height:38%">
+       	    		<img class="cierra" src="imagenes/cierra.png" style="position:absolute; height:70%; top:15%; right:2%"/> 
+                	<img src="imagenes/i.png" style="position:absolute; height:70%; top:15%; left:2%"/> 
+                	<div id="err2" style="position:absolute; left:12%;">Error:</div>
+                </div>
+                
+                <div id="erro" style="position:absolute; top:43%; width:80%; left:10%; height:52%; font-family:ArialN">
+                	<p id="errores2">Email incorrecto</p>
+                </div>
+                
+            </div>
+        
+        
+        </form>
+        
+        <script>
+        
+        	function borrar1a(){
+				$('#t_email2').html('')
+				$('#ale2').fadeOut()
+			}
+			function revisar1a(){
+				if(document.getElementById('c_email2').value==""){
+					$('#t_email2').html('Email:')
+				}
+			}
+			
+			function borrar2a(){
+				$('#t_contrasena2').html('')
+				$('#ale2').fadeOut()
+			}
+			function revisar2a(){
+				if(document.getElementById('c_contrasena2').value==""){
+					$('#t_contrasena2').html('Contraseña:')
+				}
+			}
+			
+			function borrar2(){
+				$('#t_email').html('')
+				$('#c_edad').css('background-color','rgba(255,255,255,0)')
+				$('#c_genero').css('background-color','rgba(255,255,255,0)')
+				$('#op_edad').hide()
+				$('#op_genero').hide()
+				$('#ale').fadeOut()
+			}
+			function revisar2(){
+				if(document.getElementById('c_email').value==""){
+					$('#t_email').html('Email:')
+				}
+			}
+			
+		var ida	
+			
+		$('#forma_login2').submit(function() {
+		var email = $("input#c_email2").val();
+		var contrasena = $("input#c_contrasena2").val();
+		
+
+		if(email=="Email:" || email==""){
+			$('#ale2').fadeIn()
+			$('#err2').html('Error')
+			$('#errores2').html('Debes ingresar tu email')
+			return false;
+		}else if(contrasena=="Contraseña:" || contrasena=="" || contrasena.length<8){
+			$('#ale2').fadeIn()
+			$('#err2').html('Error')
+			$('#errores2').html('La contraseña o el email es incorrecto')
+			return false;
+		}else{
+		  	 
+			 $('#ale2').fadeIn()
+			 $('#err2').html('Espera')
+			 $('#errores2').html('Espera un momento')
+		}
+											
+        $.ajax({
+            type: 'POST',
+            url: $(this).attr('action'),
+            data: $(this).serialize(),
+            success: function(data) {
+				    ida = data
+					if(data=='no'){
+					 $('#ale2').fadeIn()
+					 $('#err2').html('Error')
+					 $('#errores2').html('La contraseña o el email es incorrecto')
+					}else{
+					 $('#ale2').fadeOut()
+					 $('#votacion').css('z-index', '1')
+					 $('#log').css('z-index', '0')
+					 $('#login').css('z-index', '0')
+					  
+					 $('#atras').fadeOut(800)
+					 $('#votacion').show()
+					 $('#votacion').css('margin-left', '100%')
+					 $('#votacion').animate({marginLeft:'0%'}, 500)
+					 $('#div1, #div3, #alerta, #alerta2, #abrir_menu').fadeIn(800)
+					 $('#titulo_seccion').html('Votacion')
+					}
+            }
+        })
+		return false;
+   	 	});
+	
+        
+        </script>
+        
+        <div class="botones" style="left:8%; width:84%; height:8%; top:56%; background-color:#33508C; background:url(imagenes/bt_face.png) no-repeat; background-size:100% 100%; border:none; cursor:pointer">
    	    	<img src="imagenes/face.png" style="top:10%; height:80%; position:absolute; left:5%"/>
             <p class="red" style="width:80%; text-align:left; left:20%">Conectate con Facebook</p>
+        </div>
+        
+        <div class="botones" style="left:8%; width:84%; height:8%; top:67%; cursor:pointer; border:none; background:url(imagenes/bt_twitter.png) no-repeat; background-size:100% 100%;">
+        	<img src="imagenes/twitter.png" style="top:10%; height:80%; position:absolute; left:5%"/>
+            <p class="red" style="width:80%; text-align:left; left:20%">Log in con Twitter</p>
         </div>
 
             
@@ -494,23 +685,23 @@ function getCurrentUserInfo() {
             
             <div id="bt_imagenes" class="campos bt_imagenes" style="left:8%; width:84%; height:8%; top:21%">
                 <p class="crear" style="left:5%">Imágenes</p>
-                <p class="crear" style="right:5%; position:absolute; text-align:right">(20 pts)</p>
+                <p class="crear" style="right:5%; position:absolute; text-align:right">(10 pts)</p>
        	 	</div>
             <div id="bt_videos" class="campos bt_videos" style="left:8%; width:84%; height:8%; top:33%">
                 <p class="crear" style="left:5%">Videos</p>
-                <p class="crear" style="right:5%; position:absolute; text-align:right">(2 pts)</p>
+                <p class="crear" style="right:5%; position:absolute; text-align:right">(20 pts)</p>
        	 	</div>
             <div id="bt_textos" class="campos bt_textos" style="left:8%; width:84%; height:8%; top:45%">
                 <p class="crear" style="left:5%">Marcas</p>
-                <p class="crear" style="right:5%; position:absolute; text-align:right">(10 pts)</p>
+                <p class="crear" style="right:5%; position:absolute; text-align:right">(15 pts)</p>
        	 	</div>
             <div id="bt_cuestionarios" class="campos bt_cuestionarios" style="left:8%; width:84%; height:8%; top:57%">
                 <p class="crear" style="left:5%">Cuestionarios</p>
-                <p class="crear" style="right:5%; position:absolute; text-align:right">(5 pts)</p>
+                <p class="crear" style="right:5%; position:absolute; text-align:right">(25 pts)</p>
        	 	</div>
             <div id="bt_check" class="campos bt_check" style="left:8%; width:84%; height:8%; top:69%">
                 <p class="crear" style="left:5%">Check In</p>
-                <p class="crear" style="right:5%; position:absolute; text-align:right">(2 pts)</p>
+                <p class="crear" style="right:5%; position:absolute; text-align:right">(30 pts)</p>
        	 	</div>
             
             <div class="t1" style="width:100%; text-align:center; top:84%">Recuerda que solo puedes<br>
@@ -532,7 +723,7 @@ votar 1 vez por campaña
             
             <iframe id="gal_che" src="gal_check.html" style="width:100%; height:100%; position:absolute; overflow:hidden; background:none; border:none; display:none"></iframe>
       		<script>
-            	$('#gal_im').load('gal_imagenes.php')
+            	$('#gal_im').load('http://marlonruo.com/swayapp/gal_imagenes.php')
             </script>
       </div><!--fin galeria-->
       
@@ -791,76 +982,133 @@ function geocodeLatLng(geocoder, map) {
       
       
       <div id="monedero" style="display:none">
-        <div class="t1" style="width:100%; text-align:center; top:15%">Selecciona la categoría que desees:</div>
-            
-       <div class="campos" style="left:8%; width:84%; height:8%; top:21%; ">
-          <p class="crear" style="left:5%">SALDO TOTAL</p>
-          <p class="crear" style="right:5%; position:absolute; text-align:right">(1565 pts)</p>
-        </div>
-        
-        <div id="bt_canjear" class="campos" style="left:8%; width:84%; height:8%; top:33%;">
-          <p class="crear" style="left:5%">CANJEAR MIS PUNTOS</p>
-          <div id="canjear" style="width:80%; height:400%; background-color:rgba(255,255,255,1.00); top:92%; position:absolute; padding-left:10%; padding-right:10%; display:none; overflow:hidden">
-          	 <div id="can1" style="position:absolute; width:80%; height:25%; border-bottom:1px solid rgba(217,217,217,1.00); color:#000000"><p style="left:0%">Tiempo Aire <b>$20</b></p><p style="right:0%">(200pts)</p></div>
-             <div id="can2" style="position:absolute; width:80%; height:25%; border-bottom:1px solid rgba(217,217,217,1.00); color:#000000; top:25%"><p style="left:0%">Tiempo Aire <b>$50</b></p><p style="right:0%">(500pts)</p></div>	
-             <div id="can3" style="position:absolute; width:80%; height:25%; border-bottom:1px solid rgba(217,217,217,1.00); color:#000000; top:50%"><p style="left:0%">Dinero iTunes <b>$100</b></p><p style="right:0%">(1000pts)</p></div>
-             <div id="can4" style="position:absolute; width:80%; height:25%; border-bottom:1px solid rgba(217,217,217,1.00); color:#000000; top:75%"><p style="left:0%">Dinero iTunes <b>$200</b></p><p style="right:0%">(2000pts)</p></div>	
-          </div>
-        </div>
-        
-        <div id="bt_movimientos" class="campos" style="left:8%; width:84%; height:8%; top:45%;">
-          <p class="crear" style="left:5%">VER MIS MOVIMIENTOS</p>
-          <div id="movimientos" style="width:80%; height:400%; background-color:rgba(255,255,255,1.00); top:92%; position:absolute; padding-left:10%; padding-right:10%; display:none; overflow:hidden">
-          	 <div style="position:absolute; width:80%; height:25%; border-bottom:1px solid rgba(217,217,217,1.00); color:#000000"><p style="left:0%">Tiempo Aire - 200 pts <p style="right:0%">10/ene/2016</p></div>
-             <div style="position:absolute; width:80%; height:25%; border-bottom:1px solid rgba(217,217,217,1.00); color:#000000; top:25%"><p style="left:0%">Encuesta + 60 pts</p><p style="right:0%">3/ene/2016</p></div>	
-             <div style="position:absolute; width:80%; height:25%; border-bottom:1px solid rgba(217,217,217,1.00); color:#000000; top:50%"><p style="left:0%">Votación + 30 pts</p><p style="right:0%">2/ene/2016</p></div>
-             <div style="position:absolute; width:80%; height:25%; border-bottom:1px solid rgba(217,217,217,1.00); color:#000000; top:75%"><p style="left:0%"><b>Saldo Total</b></p><p style="right:0%">1565 pts</p></div>	
-          </div>
-          
-          
-        </div>
-        
-        <div id="bt_alta" class="campos" style="left:8%; width:84%; height:8%; top:57%;">
-          <p class="crear" style="left:5%">DAR DE ALTA CUENTA</p>
-          <div id="alta" style="width:80%; height:400%; background-color:rgba(255,255,255,1.00); top:92%; position:absolute; padding-left:10%; padding-right:10%; display:none; overflow:auto; overflow-x:hidden">
-       	    <div style="position:relative; float:left; width:100%; height:25%; border-bottom:1px solid rgba(217,217,217,1.00); color:#000000"><p style="left:0%">Amazon<div style="right:0%; position:absolute; width:50%; background-image:url(imagenes/amazon.png); height:100%; background-repeat:no-repeat; background-position:right; background-size:auto 50%"></div>
-          	 </div>
-             <div style="position:relative; float:left; width:100%; height:25%; border-bottom:1px solid rgba(217,217,217,1.00); color:#000000;"><p style="left:0%">CFE<div style="right:0%; position:absolute; width:50%; background-image:url(imagenes/cfe.png); height:100%; background-repeat:no-repeat; background-position:right; background-size:auto 50%"></div></div>	
-             <div style="position:relative; float:left; width:100%; height:25%; border-bottom:1px solid rgba(217,217,217,1.00); color:#000000;"><p style="left:0%">Itunes</p><div style="right:0%; position:absolute; width:50%; background-image:url(imagenes/itunes.png); height:100%; background-repeat:no-repeat; background-position:right; background-size:auto 50%"></div></div>
-             <div style="position:relative; float:left; width:100%; height:25%; border-bottom:1px solid rgba(217,217,217,1.00); color:#000000;"><p style="left:0%">Spotify</p><div style="right:0%; position:absolute; width:50%; background-image:url(imagenes/spotify.png); height:100%; background-repeat:no-repeat; background-position:right; background-size:auto 50%"></div></div>
-             <div style="position:relative; float:left; width:100%; height:25%; border-bottom:1px solid rgba(217,217,217,1.00); color:#000000;"><p style="left:0%">Tag</p><div style="right:0%; position:absolute; width:50%; background-image:url(imagenes/iave.png); height:100%; background-repeat:no-repeat; background-position:right; background-size:auto 50%"></div></div>
-             <div style="position:relative; float:left; width:100%; height:25%; border-bottom:1px solid rgba(217,217,217,1.00); color:#000000"><p style="left:0%; width:50%">Telcel</p><div style="right:0%; position:absolute; width:50%; background-image:url(imagenes/telcel.png); height:100%; background-repeat:no-repeat; background-position:right; background-size:auto 50%"></div></div>
-             <div style="position:relative; float:left; width:100%; height:25%; border-bottom:1px solid rgba(217,217,217,1.00); color:#000000"><p style="left:0%">-</p><p style="left:0%; text-align:right; width:50%; margin-left:50%; color:#C7004B; font-size:12px"><b>Agregar +</b></p></div>
-          </div>
-        </div>
-        
-        <script>
-        $('#bt_canjear').click(function(){
-			$('#alta').fadeOut(200)
-			$('#movimientos').fadeOut(200)
-			$('#canjear').delay(200).fadeIn(500)
-			$('#bt_movimientos').animate({top:'76%'}, 500)
-			$('#bt_alta').animate({top:'88%'}, 500)
-		})
-		
-		$('#bt_movimientos').click(function(){
-			$('#alta').fadeOut(200)
-			$('#canjear').fadeOut(200)
-			$('#movimientos').delay(200).fadeIn(500)
-			$('#bt_movimientos').animate({top:'45%'}, 500)
-			$('#bt_alta').animate({top:'88%'}, 500)
-		})
-		
-		$('#bt_alta').click(function(){
-			$('#movimientos').fadeOut(200)
-			$('#canjear').fadeOut(200)
-			$('#alta').delay(200).fadeIn(500)
-			$('#bt_movimientos').animate({top:'45%'}, 500)
-			$('#bt_alta').animate({top:'57%'}, 500)
-		})
-        </script>
-        
+        	<div id="insertar_monedero" style="position:absolute; width:100%; height:100%"></div>    
       </div><!--fin monedero-->
+      
+      
+      <div id="cuenta" style="display:none">
+      		 <div class="t1" style="width:100%; text-align:center; top:15%">Selecciona el servicio a agregar:</div>
+             
+             
+             <div id="se_1" class="campos" style="left:8%; width:84%; height:8%; top:20%; background:url(imagenes/telcel.png) no-repeat; background-size:auto 60%; background-position:94%">
+          		<p class="crear" style="left:5%">Telcel</p>
+                <div id="ser1" style="width:100%; height:100%; background-color:rgba(255,255,255,1.00); top:92%; position:absolute; display:none; overflow:hidden">
+                    <input id="serv1" name="serv1" class="t1 centro_v" type="text" style="height:100%; padding-left:10%; padding-right:10%; width:80%; color:#272727" value="Telefono" onFocus="if(document.getElementById('serv1').value=='Telefono'){document.getElementById('serv1').value=''}" onBlur="if(document.getElementById('serv1').value==''){document.getElementById('serv1').value='Telefono'}">
+                </div>
+        	</div>
+            
+            <div id="se_2" class="campos" style="left:8%; width:84%; height:8%; top:31%; background:url(imagenes/cfe.png) no-repeat; background-size:auto 60%; background-position:94%">
+          		<p class="crear" style="left:5%">CFE</p>
+                 <div id="ser2" style="width:100%; height:100%; background-color:rgba(255,255,255,1.00); top:92%; position:absolute; display:none; overflow:hidden">
+                    <input id="serv2" name="serv2" class="t1 centro_v" type="text" style="height:100%; padding-left:10%; padding-right:10%; width:80%; color:#272727" value="No cuenta" onFocus="if(document.getElementById('serv2').value=='No cuenta'){document.getElementById('serv2').value=''}" onBlur="if(document.getElementById('serv2').value==''){document.getElementById('serv2').value='No cuenta'}">
+                </div>
+        	</div>
+            
+            <div id="se_3" class="campos" style="left:8%; width:84%; height:8%; top:42%; background:url(imagenes/itunes.png) no-repeat; background-size:auto 60%; background-position:94%">
+          		<p class="crear" style="left:5%">iTunes</p>
+                 <div id="ser3" style="width:100%; height:100%; background-color:rgba(255,255,255,1.00); top:92%; position:absolute; display:none; overflow:hidden">
+                    <input id="serv3" name="serv3" class="t1 centro_v" type="text" style="height:100%; padding-left:10%; padding-right:10%; width:80%; color:#272727" value="Usuario" onFocus="if(document.getElementById('serv3').value=='Usuario'){document.getElementById('serv3').value=''}" onBlur="if(document.getElementById('serv3').value==''){document.getElementById('serv3').value='Usuario'}">
+                </div>
+        	</div>
+            
+            <div id="se_4" class="campos" style="left:8%; width:84%; height:8%; top:53%; background:url(imagenes/spotify.png) no-repeat; background-size:auto 60%; background-position:94%">
+          		<p class="crear" style="left:5%">Spotify</p>
+                 <div id="ser4" style="width:100%; height:100%; background-color:rgba(255,255,255,1.00); top:92%; position:absolute; display:none; overflow:hidden">
+                    <input id="serv4" name="serv4" class="t1 centro_v" type="text" style="height:100%; padding-left:10%; padding-right:10%; width:80%; color:#272727" value="Usuario" onFocus="if(document.getElementById('serv4').value=='Usuario'){document.getElementById('serv4').value=''}" onBlur="if(document.getElementById('serv4').value==''){document.getElementById('serv4').value='Usuario'}">
+                </div>
+        	</div>          
+            
+             <div id="se_5" class="campos" style="left:8%; width:84%; height:8%; top:64%; background:url(imagenes/amazon.png) no-repeat; background-size:auto 60%; background-position:94%">
+          		<p class="crear" style="left:5%">Amazon</p>
+                 <div id="ser5" style="width:100%; height:100%; background-color:rgba(255,255,255,1.00); top:92%; position:absolute; display:none; overflow:hidden">
+                    <input id="serv5" name="serv5" class="t1 centro_v" type="text" style="height:100%; padding-left:10%; padding-right:10%; width:80%; color:#272727" value="Usuario" onFocus="if(document.getElementById('serv5').value=='Usuario'){document.getElementById('serv5').value=''}" onBlur="if(document.getElementById('serv5').value==''){document.getElementById('serv5').value='Usuario'}">
+                </div>
+        	</div>
+            
+            <input id="bt_listo" type="submit" class="botones bot" style="left:8%; width:85%; height:8%; top:86%; cursor:pointer; background:url(imagenes/bt_rosa.png) no-repeat; background-size:100% 100%; border:2px solid #FFFFFF" value="Listo">
+            
+            
+            
+            <script>
+				
+				$('#bt_listo').click(function(){
+					
+					var se1a=document.getElementById('serv1').value;
+					var se2a=document.getElementById('serv2').value;
+					var se3a=document.getElementById('serv3').value;
+					var se4a=document.getElementById('serv4').value;
+					var se5a=document.getElementById('serv5').value;
+					$.ajax({
+						type: "POST",
+						url: "http://marlonruo.com/swayapp/php/addservicios.php?se1="+se1a+"&se2="+se2a+"&se3="+se3a+"&se4="+se4a+"&se5="+se5a+"&id="+ida,
+						data: { "codigo" :  "codigo" },
+						success: function(data){
+							$( "#insertar_monedero" ).load("http://marlonruo.com/swayapp/monedero.php", function() {
+								  inicio()
+							 });
+						}
+					});
+				});
+			
+            	$('#se_1').click(function(){
+					$('#ser1').fadeIn(500)
+					$('#ser2').fadeOut(200)
+					$('#ser3').fadeOut(200)
+					$('#ser4').fadeOut(200)
+					$('#ser5').fadeOut(200)
+					$('#se_2').animate({top:'39%'}, 500)
+					$('#se_3').animate({top:'50%'}, 500)
+					$('#se_4').animate({top:'61%'}, 500)
+					$('#se_5').animate({top:'72%'}, 500)
+				})
+				$('#se_2').click(function(){
+					$('#ser2').fadeIn(500)
+					$('#ser1').fadeOut(200)
+					$('#ser3').fadeOut(200)
+					$('#ser4').fadeOut(200)
+					$('#ser5').fadeOut(200)
+					$('#se_2').animate({top:'31%'}, 500)
+					$('#se_3').animate({top:'50%'}, 500)
+					$('#se_4').animate({top:'61%'}, 500)
+					$('#se_5').animate({top:'72%'}, 500)
+				})
+				$('#se_3').click(function(){
+					$('#ser3').fadeIn(500)
+					$('#ser2').fadeOut(200)
+					$('#ser1').fadeOut(200)
+					$('#ser4').fadeOut(200)
+					$('#ser5').fadeOut(200)
+					$('#se_2').animate({top:'31%'}, 500)
+					$('#se_3').animate({top:'42%'}, 500)
+					$('#se_4').animate({top:'61%'}, 500)
+					$('#se_5').animate({top:'72%'}, 500)
+				})
+				$('#se_4').click(function(){
+					$('#ser4').fadeIn(500)
+					$('#ser2').fadeOut(200)
+					$('#ser3').fadeOut(200)
+					$('#ser1').fadeOut(200)
+					$('#ser5').fadeOut(200)
+					$('#se_2').animate({top:'31%'}, 500)
+					$('#se_3').animate({top:'42%'}, 500)
+					$('#se_4').animate({top:'53%'}, 500)
+					$('#se_5').animate({top:'72%'}, 500)
+				})
+				$('#se_5').click(function(){
+					$('#ser5').fadeIn(500)
+					$('#ser2').fadeOut(200)
+					$('#ser3').fadeOut(200)
+					$('#ser4').fadeOut(200)
+					$('#ser1').fadeOut(200)
+					$('#se_2').animate({top:'31%'}, 500)
+					$('#se_3').animate({top:'42%'}, 500)
+					$('#se_4').animate({top:'53%'}, 500)
+					$('#se_5').animate({top:'64%'}, 500)
+				})
+            </script>
+      
+
+      </div><!--fin cuenta-->
       
       
       
@@ -970,60 +1218,7 @@ click en "Permitir" para continuar.
       
       
       <div id="localizador" style="display:none">
-        <div class="t1" style="width:100%; text-align:center; top:14%">Mi cuenta</div>
-            
-        <div id="lo_1" class="campos" style="left:8%; width:84%; height:8%; top:20%;background:url(imagenes/edi.png) no-repeat; background-size:auto 60%; background-position:94%">
-          <p id="lo_1b" class="crear" style="left:5%">Nombre: Alessa Auditore</p>
-        </div>
-        
-        <div id="lo_2" class="campos" style="left:8%; width:84%; height:8%; top:31%;">
-          <p id="lo_2b" class="crear" style="left:5%">Email: alessa@auditore.com</p>
-        </div>
-        
-        <div id="lo_3" class="campos" style="left:8%; width:84%; height:8%; top:42%;">
-          <p id="lo_3b" class="crear" style="left:5%">Tel: 55-6789-9876</p>
-        </div>
-        
-        <div id="lo_4" class="campos" style="left:8%; width:84%; height:8%; top:53%;">
-          <p class="crear" style="left:5%">Cuentas vinculadas</p>
-          	<div id="alta2" style="width:80%; height:300%; background-color:rgba(255,255,255,1.00); top:92%; position:absolute; padding-left:10%; padding-right:10%; display:none; overflow:auto; overflow-x:hidden; z-index:1000">
-       	    <div style="position:relative; float:left; width:100%; height:33%; border-bottom:1px solid rgba(217,217,217,1.00); color:#000000"><p style="left:0%">Amazon<div style="right:0%; position:absolute; width:50%; background-image:url(imagenes/amazon.png); height:100%; background-repeat:no-repeat; background-position:right; background-size:auto 50%"></div>
-          	 </div>
-             <div style="position:relative; float:left; width:100%; height:33%; border-bottom:1px solid rgba(217,217,217,1.00); color:#000000;"><p style="left:0%">CFE<div style="right:0%; position:absolute; width:50%; background-image:url(imagenes/cfe.png); height:100%; background-repeat:no-repeat; background-position:right; background-size:auto 50%"></div></div>	
-             <div style="position:relative; float:left; width:100%; height:33%; border-bottom:1px solid rgba(217,217,217,1.00); color:#000000;"><p style="left:0%">Itunes</p><div style="right:0%; position:absolute; width:50%; background-image:url(imagenes/itunes.png); height:100%; background-repeat:no-repeat; background-position:right; background-size:auto 50%"></div></div>
-
-          </div>
-        </div>
-        <div id="lo_5" class="campos" style="left:8%; width:84%; height:8%; top:64%;">
-          <p class="crear" style="left:5%">CERRAR SESIÓN</p>
-        </div>
-        
-        <script>
-		  $('#lo_4').on( "vmousedown", function() {
-			  $(this).css('background', 'url(imagenes/bt_rosa.png) no-repeat')
-			  $(this).css('background-size', '100% 100%')
-			  $('#lo_5').animate({top:'87%'}, 400)
-			  $('#alta2').delay(300).fadeIn(400)
-		  })
-		  
-		  $('#lo_1, #lo_2, #lo_3, #lo_5').on( "vmousedown", function() {
-			  $(this).css('background', 'url(imagenes/bt_rosa.png) no-repeat')
-			  $(this).css('background-size', '100% 100%')
-			  $('#lo_4').css('background', 'none')
-			  $('#lo_5').delay(300).animate({top:'64%'}, 400)
-			  $('#alta2').fadeOut(400)
-		  })
-		   $('#lo_2, #lo_3, #lo_5').on( "vmouseup", function() {
-			 $(this).css('background', 'none')
-		  })
-		  
-		  $('#lo_1').on( "vmouseup", function() {
-			 $(this).css('background', 'url(imagenes/edi.png) no-repeat')
-			 $(this).css('background-position', '94%')
-			 $(this).css('background-size', 'auto 60%')
-		  })
-        
-		</script>
+        	<div id="insertar_cuenta" style="position:absolute; width:100%; height:100%;"></div>
       </div><!--fin localizador-->
       
       
@@ -1031,16 +1226,16 @@ click en "Permitir" para continuar.
       <div id="editar" style="display:none">
             <div class="t1" style="width:100%; text-align:center; top:14%">Editar Perfil:</div>
                 
-            <div class="campos" style="left:8%; width:84%; height:8%; top:20%;">
-              <p id="lo_1a" class="crear" style="left:5%">Alessa Auditore</p>
+            <div id="lo_1a" class="campos" style="left:8%; width:84%; height:8%; top:20%;">
+              <p id="lo_nombre" class="crear" style="left:5%"></p>
             </div>
             
-            <div class="campos" style="left:8%; width:84%; height:8%; top:31%;">
-              <p id="lo_2a" class="crear" style="left:5%">alessa@auditore.com</p>
+            <div id="lo_2a" class="campos" style="left:8%; width:84%; height:8%; top:31%;">
+              <p id="lo_email" class="crear" style="left:5%"></p>
             </div>
             
-            <div class="campos" style="left:8%; width:84%; height:8%; top:42%;">
-              <p id="lo_3a" class="crear" style="left:5%">55-6789-9876</p>
+            <div id="lo_3a" class="campos" style="left:8%; width:84%; height:8%; top:42%;">
+              <p id="lo_telefono" class="crear" style="left:5%"></p>
             </div>
             
             <div id="c_edad2" class="campos" style="left:8%; width:40%; height:8%; top:53%; background:url(imagenes/abajo.png) no-repeat; background-size:auto 38%; background-position:90%">
@@ -1161,7 +1356,7 @@ click en "Permitir" para continuar.
         
         <img id="codi" src="imagenes/codigo.png" style="position:absolute; top:70%; left:8%; width:84%;"/>
         
-        <div class="cod" style="width:60%; left:26%; position:absolute; top:70%;">GPW1501</div>
+        <div id="codigo_usuario" class="cod" style="width:60%; left:26%; position:absolute; top:70%; text-transform: uppercase">GPW1501</div>
 
         
         <div id="bt_log" class="t1" style="width:100%; text-align:center; top:91%; cursor:pointer">Conocer más acerca de <img src="imagenes/flecha.png" height="8px"/></div>
@@ -1255,6 +1450,7 @@ click en "Permitir" para continuar.
 	  
 	  
       function inicio(){
+		  
 				var $window = $(window);
 				width = $window.width();
 				height = $window.height();
@@ -1269,12 +1465,12 @@ click en "Permitir" para continuar.
 				$('.bot').css('font-size', height/25+'px')
 				$('.red').css('font-size', height/28+'px')
 				$('#bt_log').css('font-size', height/40+'px')
-				$('.estrellas').css('height', (height/15)+'px')
+				//$('.estrellas').css('height', (height/10)+'px')
 				$('.es2').css('height', (height/24)+'px')
-				$('.es2').css('top', (height/110)+'px')
+				//$('.es2').css('top', (height/140)+'px')
 				$('.menu_titulo').css('font-size', (height/14)+'px')
 				$('.cod').css('font-size', height/20+'px')
-				$('#err').css('font-size', height/26+'px')
+				$('#err, #err2').css('font-size', height/26+'px')
 				$('#erro').css('font-size', height/40+'px')
 				$('#bus').css('font-size', height/40+'px')
 				
@@ -1288,6 +1484,8 @@ click en "Permitir" para continuar.
 				$('.cod').css('line-height', alto_cod+'px')
 				$('.cod').css('height', alto_cod+'px')
 				$('.cod').css('font-size', height/9+'px')
+				$('.centrar').css('font-size', height/10+'px')
+				$('.centrar2').css('font-size', height/16+'px')
 				
 				
 				//document.getElementById('c_nombre').value=localStorage.getItem('nombre')
@@ -1296,67 +1494,11 @@ click en "Permitir" para continuar.
 	  
 	  var at=0
 	  var reg
-	  $('#bt_signup').click(function(){
-		  
-		var email = $("input#c_email").val();
-		var nombre = $("input#c_nombre").val();
-		var edad = document.getElementById('t_edad').innerHTML
-		var genero = document.getElementById('t_genero').innerHTML
-		var contrasena = $("input#c_contrasena").val();
-		
-		
-		$('#lo_1b').html('Nombre: '+nombre)
-		$('#lo_2b').html('Email: '+email)
-		$('#lo_3b').html('Tel: 0000 0000')
-		
-		
-		$('#lo_1a').html(nombre)
-		$('#lo_2a').html(email)
-		$('#lo_3a').html('0000 0000')
-		$('#t_edad2').html(edad)
-		$('#t_genero2').html(genero)
-
-		
-		
-		var filtro = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;	
-		
-		
-		if (!filtro.test(email)) {
-			$('#ale').fadeIn()
-			$('#errores').html('Email incorrecto')
-		}else if(nombre=="Nombre:" || nombre==""){
-			$('#ale').fadeIn()
-			$('#errores').html('Debes ingresar tu nombre')
-		}else if(edad=="Edad" || edad==""){
-			$('#ale').fadeIn()
-			$('#errores').html('Debes ingresar tu edad')
-		}else if(genero=="Género" || genero==""){
-			$('#ale').fadeIn()
-			$('#errores').html('Debes ingresar tu género')
-		}else if(contrasena=="Contraseña:" || contrasena=="" || contrasena.length<8){
-			$('#ale').fadeIn()
-			$('#errores').html('La contraseña debe tener al menos 8 caracteres')
-		}else if(tte==0){
-			$('#ale').fadeIn()
-			$('#errores').html('Debes aceptar los terminos y condiciones')
-		}else{
-		  	 localStorage.setItem("nombre", $("input#c_nombre").val());
-			 
-			 $('#votacion').css('z-index', '1')
-			 $('#log').css('z-index', '0')
-			 $('#login').css('z-index', '0')
-			  
-			 $('#votacion').show()
-			 $('#votacion').css('margin-left', '100%')
-			 $('#votacion').animate({marginLeft:'0%'}, 500)
-			 $('#div1, #div3, #alerta, #alerta2, #abrir_menu').fadeIn(800)
-			 $('#titulo_seccion').html('Votacion')
-		}
-      })
 	  
 	  
-	  $('#cierra').click(function(){
-		 $('#ale').fadeOut()
+	  
+	  $('.cierra').click(function(){
+		 $('#ale, #ale2').fadeOut()
       })
 	  
 	  
@@ -1403,6 +1545,8 @@ click en "Permitir" para continuar.
 		     $('#votacion').animate({marginLeft:'0%'}, 500)
 			 $('#galeria').delay(500).fadeOut(0)
 			 $('#titulo_seccion').html('Votación')
+			 
+			 setTimeout('$( "#gal_im" ).load("http://marlonruo.com/swayapp/vacio.php", function() {inicio()});', 500)
 			 at=0
 		  }else if(at==3){	
 		   	 $('#galeria').show()
@@ -1464,6 +1608,21 @@ click en "Permitir" para continuar.
 		     $('#localizador').animate({marginLeft:'0%'}, 500)
 			 $('#titulo_seccion').html('Mi Cuenta')
 			 at=0
+		  }else if(at==8){
+		  	 $('#atras').fadeOut()
+			 $('#alerta, #alerta2').fadeIn()
+			 $('#atras').css('right','19%')
+			 	
+		   	 $('#monedero').show()
+			 $('#monedero').css('z-index', '2')
+			 $('#cuenta').css('z-index', '1')
+
+			 $('#monedero').show()
+		     $('#monedero').css('margin-left', '100%')
+		     $('#monedero').animate({marginLeft:'0%'}, 500)
+			 $('#titulo_seccion').html('Monedero Virtual')
+			 $('#cuenta').delay(500).fadeOut(0)
+			 at=0
 		  }
       })
 	  
@@ -1486,7 +1645,7 @@ click en "Permitir" para continuar.
 	  $('#bt_imagenes').click(function(){
 		  $('#gal_che').hide()
 		  $('#gal_im').show()
-		  $( "#gal_im" ).load( "gal_imagenes.php", function() {
+		  $( "#gal_im" ).load( "http://marlonruo.com/swayapp/gal_imagenes.php?id="+ida, function() {
 			  inicio()
 		  });
 		 
@@ -1517,7 +1676,7 @@ click en "Permitir" para continuar.
 	  $('#bt_videos').click(function(){
 		  $('#gal_che').hide()
 		  $('#gal_im').show()
-		   $( "#gal_im" ).load( "gal_videos.php", function() {
+		   $( "#gal_im" ).load( "http://marlonruo.com/swayapp/gal_videos.php", function() {
 			  inicio()
 		  });
 		  
@@ -1541,7 +1700,7 @@ click en "Permitir" para continuar.
 	  $('#bt_textos').click(function(){
 		  $('#gal_che').hide()
 		  $('#gal_im').show()
-		   $( "#gal_im" ).load( "gal_textos.php", function() {
+		   $( "#gal_im" ).load( "http://marlonruo.com/swayapp/gal_textos.php", function() {
 			  inicio()
 		  });
 		  
@@ -1565,7 +1724,7 @@ click en "Permitir" para continuar.
 	  $('#bt_cuestionarios').click(function(){
 		  $('#gal_che').hide()
 		  $('#gal_im').show()
-		   $( "#gal_im" ).load( "gal_cuestionario2.php", function() {
+		   $( "#gal_im" ).load( "http://marlonruo.com/swayapp/gal_cuestionario2.php", function() {
 			  inicio()
 		  });
 		  
@@ -1677,7 +1836,25 @@ click en "Permitir" para continuar.
 		 $('#opciones').animate({marginLeft:'0%'}, 500, 'linear')
 		 $('#todo').animate({marginLeft:'-100%'}, 500, 'linear')
 		 $('#titulo_seccion').html('Menu')
-		 $('#editar').delay(800).fadeOut()
+		 
+		 $( "#insertar_monedero" ).load("http://marlonruo.com/swayapp/monedero.php", function() {
+			  inicio()
+	  	 });
+		 
+		 $( "#insertar_cuenta" ).load("http://marlonruo.com/swayapp/cuenta.php", function() {
+			  inicio()
+	  	 });
+		 
+		 
+				 $.ajax({
+						type: "POST",
+						url: "http://marlonruo.com/swayapp/php/codigo.php",
+						data: { "codigo" :  "codigo" },
+						success: function(data){
+							$('#codigo_usuario').html(data)
+						}
+					});
+	  
       })
 	  
 	  $('#cerrar_menu').click(function(){
@@ -1743,6 +1920,7 @@ click en "Permitir" para continuar.
 		 $('#localizador').hide()
 		 $('#editar').hide()
 		 $('#codigo').hide()
+		 $('#cuenta').hide()
 		 $('#titulo_seccion').html('Registro')
       })
 	  
@@ -1752,7 +1930,6 @@ click en "Permitir" para continuar.
 	  
 	  
 	  $('#bt_votacion').click(function(){
-
 		  
 		 $('#votacion').css('z-index', '1')
 		 $('#galeria').css('z-index', '0')
@@ -1782,6 +1959,7 @@ click en "Permitir" para continuar.
 		 $('#mapas_grande').hide()
 		 $('#localizador').hide()
 		 $('#codigo').hide()
+		 $('#cuenta').hide()
 		 $('#titulo_seccion').html('Votación')
       })
 	  
@@ -1815,6 +1993,7 @@ click en "Permitir" para continuar.
 		 $('#mapas_grande').hide()
 		 $('#localizador').hide()
 		 $('#codigo').hide()
+		 $('#cuenta').hide()
 		 $('#titulo_seccion').html('Monedero Virtual')
       })
 	  
@@ -1848,6 +2027,7 @@ click en "Permitir" para continuar.
 		 $('#mapas_grande').hide()
 		 $('#localizador').hide()
 		 $('#codigo').hide()
+		 $('#cuenta').hide()
 		 $('#titulo_seccion').html('Mapas / Centros C...')
 		 initMap()
       })
@@ -1944,6 +2124,7 @@ click en "Permitir" para continuar.
 		 $('#mapas_grande').hide()
 		 $('#localizador').show()
 		 $('#codigo').hide()
+		 $('#cuenta').hide()
 		 $('#titulo_seccion').html('Mi Cuenta')
       })
 	  
@@ -1984,10 +2165,14 @@ click en "Permitir" para continuar.
 		 $('#mapas_grande').hide()
 		 $('#localizador').hide()
 		 $('#codigo').show()
+		 $('#cuenta').hide()
 		 $('#titulo_seccion').html('Código de Cliente')
 		 
 		 inicio()
       })
+	  
+	  
+	  
 	  
 	  
 	  
