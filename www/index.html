@@ -470,11 +470,12 @@ function getCurrentUserInfo() {
             url: $(this).attr('action'),
             data: $(this).serialize(),
             success: function(data) {
+					alert(data)
 					ida = data
 					if(data=='no'){
 					 $('#ale').fadeIn()
 					 $('#err').html('Error')
-					 $('#errores').html('Este email ya ha sido registrado_')
+					 $('#errores').html('Este email ya ha sido registrado')
 					}else{
 					 $('#ale').fadeOut()
 					 //localStorage.setItem("nombre", $("input#c_nombre").val());
