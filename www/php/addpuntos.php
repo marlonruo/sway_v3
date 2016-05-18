@@ -1,5 +1,4 @@
 <?php
-	session_start();
 	include ("conexion.php");
 
 	 $connect = mysql_connect("$host", "$user", "$pass");
@@ -16,8 +15,6 @@
 			 while($row2=mysql_fetch_array($result2)){
 				$pasa = "no";
 			 }
-			
-			
 			if($pasa=='si'){
 			 	$result = mysql_query("INSERT INTO puntos (usuario, campana, puntos, estrellas, fecha) VALUES ('$id', '$campana', '$puntos', '$estrellas', '$fecha')");
 			}

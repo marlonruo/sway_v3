@@ -227,7 +227,7 @@ function getCurrentUserInfo() {
         </div>
         <div class="campos" style="left:8%; width:84%; height:5%; top:21.5%">
         	<p id="t_email" class="crear" style="margin-left:5%">Email:</p>
-            <input id="c_email" name="c_email" class="campo_texto" type="text" onFocus="borrar2()" onBlur="revisar2()">
+            <input id="c_email" name="c_email" class="campo_texto" type="email" onFocus="borrar2()" onBlur="revisar2()">
         </div>
         
         <div id="c_edad" class="campos" style="left:8%; width:40%; height:5%; top:29%; background:url(imagenes/abajo.png) no-repeat; background-size:auto 38%; background-position:90%">
@@ -295,7 +295,7 @@ function getCurrentUserInfo() {
         
         <div class="campos" style="left:8%; width:84%; height:5%; top:36.5%">
         	<p id="t_contrasena" class="crear" style="margin-left:5%">Contraseña:</p>
-            <input id="c_contrasena" name="c_contrasena" class="campo_texto" type="text" onFocus="borrar5()" onBlur="revisar5()">
+            <input id="c_contrasena" name="c_contrasena" class="campo_texto" type="password" onFocus="borrar5()" onBlur="revisar5()">
         </div>
         
         <div class="campos" style="left:8%; width:84%; height:5%; top:44%">
@@ -470,7 +470,6 @@ function getCurrentUserInfo() {
             url: $(this).attr('action'),
             data: $(this).serialize(),
             success: function(data) {
-					alert(data)
 					ida = data
 					if(data=='no'){
 					 $('#ale').fadeIn()
