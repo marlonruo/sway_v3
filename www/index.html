@@ -468,7 +468,13 @@ function getCurrentUserInfo() {
             url: $(this).attr('action'),
             data: $(this).serialize(),
             success: function(data) {
-					if(data=='si'){
+					ida = data
+					
+					if(data=='no'){
+					 $('#ale').fadeIn()
+					 $('#err').html('Error')
+					 $('#errores').html('Este email ya ha sido registrado')
+					}else{
 					 $('#ale').fadeOut()
 					 //localStorage.setItem("nombre", $("input#c_nombre").val());
 					 $('#votacion').css('z-index', '1')
@@ -480,10 +486,6 @@ function getCurrentUserInfo() {
 					 $('#votacion').animate({marginLeft:'0%'}, 500)
 					 $('#div1, #div3, #alerta, #alerta2, #abrir_menu').fadeIn(800)
 					 $('#titulo_seccion').html('Votacion')
-					}else{
-					 $('#ale').fadeIn()
-					 $('#err').html('Error')
-					 $('#errores').html('Este email ya ha sido registrado')
 					}
             }
         })
