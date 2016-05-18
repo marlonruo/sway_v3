@@ -319,6 +319,8 @@ function getCurrentUserInfo() {
         
         <script>
 		
+		var ida	
+		
 			$('#c_genero').mousedown(function(){
 				$('#ale').fadeOut()
 				$('#c_genero').css('background-color','#C7004B')
@@ -469,11 +471,10 @@ function getCurrentUserInfo() {
             data: $(this).serialize(),
             success: function(data) {
 					ida = data
-					
 					if(data=='no'){
 					 $('#ale').fadeIn()
 					 $('#err').html('Error')
-					 $('#errores').html('Este email ya ha sido registrado')
+					 $('#errores').html('Este email ya ha sido registrado_')
 					}else{
 					 $('#ale').fadeOut()
 					 //localStorage.setItem("nombre", $("input#c_nombre").val());
@@ -605,7 +606,7 @@ function getCurrentUserInfo() {
 				}
 			}
 			
-		var ida	
+		
 			
 		$('#forma_login2').submit(function() {
 		var email = $("input#c_email2").val();
