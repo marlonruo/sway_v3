@@ -1,4 +1,4 @@
-# Hello World PhoneGap Application
+# Hello World PhoneGap Application [![bitHound Score][bithound-img]][bithound-url]
 
 > A Hello World application built with PhoneGap
 
@@ -20,18 +20,6 @@ when you create a new application.
 Create a new app with the following repository:
 
     https://github.com/phonegap/phonegap-start.git
-
-### Nitrous.io
-
-First [setup nitrous.io][nitrous-url] to use this project.
-
-Then run the following commands in the nitrous.io terminal:
-
-    $ cd ~/workspace/phonegap-start
-    $ npm install -g phonegap
-    $ phonegap remote build android
-
-The last command requires an Adobe ID and will build your app on PhoneGap Build.
 
 ## Contributors
 
@@ -65,5 +53,6 @@ Replace `<h1>Apache Cordova</h1>` with `<h1>PhoneGap</h1>`.
 
 [phonegap-cli-url]: http://github.com/phonegap/phonegap-cli
 [cordova-app]: http://github.com/apache/cordova-app-hello-world
-[nitrous-url]: https://d3o0mnbgv6k92a.cloudfront.net/assets/hack-l-v1-3cc067e(https://www.nitrous.io/hack_button?source=embed&runtime=nodejs&repo=phonegap%2Fphonegap-start&file_to_open=README.md
+[bithound-img]: https://www.bithound.io/github/phonegap/phonegap-start/badges/score.svg
+[bithound-url]: https://www.bithound.io/github/phonegap/phonegap-start
 
